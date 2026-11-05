@@ -40,20 +40,6 @@ There are **millions** of these reports.
 
 ---
 
-## 🛠️ Tech Stack
-
-| Tool | Used for |
-|---|---|
-| 🐍 **Python** | The main language |
-| 🐘 **Hadoop** | Reading and storing big files |
-| ⚡ **Apache Spark** | Cleaning and processing 1.7 GB of data fast |
-| 🤖 **Spark MLlib** | Finding medicines taken together (FP-Growth) |
-| 📦 **Parquet** | Small, fast data files |
-| 🎈 **Streamlit** | The web dashboard |
-| 📉 **Plotly + NetworkX** | Interactive charts and graphs |
-
----
-
 ## 🔄 How it works
 
 <div align="center">
@@ -141,8 +127,10 @@ SafeDose/
 
 <div align="center">
 
-Made with ❤️ using free data from **openFDA**
-
 📘 Want the full explanation? Read [PROJECT_GUIDE.md](PROJECT_GUIDE.md)
+
+Data from **openFDA** (FDA FAERS)
+
+### Made with ❤️ by **Bharani Sankar**
 
 </div>
