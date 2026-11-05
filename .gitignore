@@ -1,0 +1,22 @@
+# Raw FDA dataset (1.7 GB, too large for GitHub). Re-download with: python src/02_download.py
+data/raw/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Spark / Hadoop leftovers
+spark-warehouse/
+metastore_db/
+derby.log
+*.crc
+_temporary/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

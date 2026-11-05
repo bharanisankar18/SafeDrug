@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&family=Roboto:wght@400;500&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #131313; --surface: #1B1B1B; --surface2: #222322; --line: #2C2D2C; --line2: #3A3B3A;
+    --green: #4DB51F; --green2: #7BD84A; --green-soft: rgba(77,181,31,.14);
+    --text: #ECECEC; --muted: #A3A3A3; --dim: #6E6E6E;
+    --blue: #5AA9E6; --amber: #E8A23A; --red: #E5534B;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: transparent; color: var(--text); font-family: Roboto, system-ui, sans-serif; }
+  .wrap { background: var(--surface); border: 1px solid rgba(77,181,31,.5); border-radius: 18px; padding: 22px 24px 24px; }
+
+  .head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; }
+  h2 { font-family: 'Roboto Condensed', sans-serif; font-size: 28px; line-height: 1.1; margin: 0; font-weight: 700; }
+  .head p { margin: 6px 0 0; color: var(--muted); font-size: 15px; line-height: 1.5; max-width: 70ch; }
+  .controls { display: flex; gap: 8px; flex-wrap: wrap; }
+  button {
+    font-family: 'Roboto Condensed', sans-serif; font-size: 15px; border-radius: 999px; padding: 9px 18px;
+    border: 1px solid var(--line2); background: var(--surface2); color: var(--text); cursor: pointer;
+  }
+  button:hover { border-color: #555; }
+  button.primary { background: var(--green); border-color: var(--green); color: #fff; font-weight: 600; min-width: 168px; }
+  button:focus-visible, .node:focus-visible { outline: 2px solid var(--green2); outline-offset: 3px; }
+
+  .canvas { overflow-x: auto; margin: 14px -6px 0; padding: 0 6px; }
+  svg.flow { display: block; width: 100%; min-width: 940px; height: auto; }
+  .edge { fill: none; stroke: var(--line2); stroke-width: 2; transition: stroke .35s; }
+  .edge.on { stroke: rgba(123,216,74,.75); }
+  .packet { fill: var(--green2); }
+  .node { cursor: pointer; outline: none; }
+  .node rect.box { fill: #1F201F; stroke: #353635; stroke-width: 1.5; transition: stroke .3s, fill .3s; }
+  .node:hover rect.box { stroke: #555; }
+  .node.active rect.box { fill: #1D2A17; stroke: var(--green); stroke-width: 2; }
+  .node circle.num { fill: #2C2D2C; transition: fill .3s; }
+  .node.active circle.num { fill: var(--green); }
+  .node text { pointer-events: none; }
+  .t { font-family: 'Roboto Condensed', sans-serif; font-weight: 700; font-size: 17px; fill: var(--text); }
+  .s { font-family: Roboto, sans-serif; font-size: 12.5px; fill: var(--muted); }
+  .n { font-family: 'Roboto Condensed', sans-serif; font-weight: 700; font-size: 12.5px; fill: var(--text); }
+  .lane-r { rx: 8; }
+  .lane-t { font-family: 'Roboto Condensed', sans-serif; font-size: 13px; font-weight: 600; }
+
+  .detail { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .progress { height: 3px; background: var(--line); border-radius: 3px; overflow: hidden; margin-bottom: 16px; }
+  .progress i { display: block; height: 100%; width: 0; background: var(--green); }
+  .progress.run i { animation: fill var(--dur) linear forwards; }
+  @keyframes fill { to { width: 100%; } }
+  .grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 26px; min-height: 400px; }
+  @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+  .step { color: var(--green2); font-family: 'Roboto Condensed', sans-serif; font-size: 14px; font-weight: 600; }
+  h3 { font-family: 'Roboto Condensed', sans-serif; font-size: 26px; margin: 2px 0 10px; font-weight: 700; }
+  .lead { color: var(--text); font-size: 15px; line-height: 1.6; margin: 0 0 14px; max-width: 64ch; }
+  ul.points { margin: 0 0 16px; padding: 0; list-style: none; }
+  ul.points li { position: relative; padding: 0 0 9px 18px; color: var(--muted); font-size: 14px; line-height: 1.55; max-width: 66ch; }
+  ul.points li::before { content: ""; position: absolute; left: 0; top: 8px; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+  ul.points b { color: var(--text); font-weight: 500; }
+  .io { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; align-items: stretch; }
+  .io div.box { background: var(--surface2); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; }
+  .io .k { font-size: 12px; color: var(--dim); }
+  .io .v { font-family: 'Roboto Condensed', sans-serif; font-size: 16px; font-weight: 600; margin-top: 2px; }
+  .io .arrow { align-self: center; color: var(--green2); font-size: 20px; }
+  .tech { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .chip { font-family: 'Roboto Condensed', sans-serif; font-size: 13px; padding: 4px 10px; border-radius: 999px; background: var(--surface2); border: 1px solid var(--line); color: var(--muted); }
+
+  .panel { background: #171817; border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+  .panel-t { font-family: 'Roboto Condensed', sans-serif; font-size: 16px; font-weight: 600; margin: 0 0 12px; }
+  .panel-c { font-size: 12.5px; color: var(--dim); margin-top: 10px; line-height: 1.5; }
+  pre { margin: 14px 0 0; background: #101110; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; overflow-x: auto;
+        font-family: 'Roboto Mono', monospace; font-size: 12.5px; line-height: 1.6; color: #CFE8C0; }
+  pre .c { color: var(--dim); }
+
+  /* mini visuals */
+  .bars .row { display: grid; grid-template-columns: 170px 1fr 70px; gap: 10px; align-items: center; margin-bottom: 9px; font-size: 13px; }
+  .bars .name { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: 'Roboto Mono', monospace; font-size: 12px; }
+  .bars .track { height: 12px; background: var(--surface2); border-radius: 6px; overflow: hidden; }
+  .bars .fill { height: 100%; background: var(--green); border-radius: 6px; }
+  .bars .val { text-align: right; font-family: 'Roboto Condensed'; font-weight: 600; }
+  .blocks { display: flex; gap: 3px; flex-wrap: wrap; margin: 6px 0 4px; }
+  .blocks span { width: 14px; height: 14px; border-radius: 3px; background: #2A3A22; border: 1px solid #3D5A2E; }
+  .blocks.whole span { background: #24323F; border-color: #36536B; }
+  .lanes .lane { display: grid; grid-template-columns: 58px 1fr; gap: 10px; align-items: center; margin-bottom: 8px; }
+  .lanes .lab { font-size: 12.5px; color: var(--muted); font-family: 'Roboto Condensed'; }
+  .lanes .trk { height: 22px; background: var(--surface2); border-radius: 6px; position: relative; overflow: hidden; }
+  .lanes .task { position: absolute; left: 0; top: 0; bottom: 0; background: var(--green); border-radius: 6px; width: 0; display: flex; align-items: center; padding-left: 8px;
+                 font-size: 11.5px; color: #0d1a07; font-weight: 600; white-space: nowrap; }
+  .lanes.go .task { animation: grow 2.6s ease-out forwards; }
+  @keyframes grow { to { width: var(--w); } }
+  .lanes .idle { position: absolute; left: 8px; top: 3px; font-size: 11.5px; color: var(--dim); }
+  .dag { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .dag .op { font-family: 'Roboto Mono', monospace; font-size: 12px; padding: 5px 9px; border-radius: 8px; background: var(--surface2); border: 1px solid var(--line); }
+  .dag .op.shuffle { border-color: var(--amber); color: var(--amber); }
+  .dag .op.action { border-color: var(--green); color: var(--green2); }
+  .dag .to { color: var(--dim); font-size: 13px; }
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 10px; font-size: 12px; color: var(--muted); }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+  .tree { font-family: 'Roboto Mono', monospace; font-size: 12.5px; line-height: 1.8; color: var(--muted); }
+  .tree b { color: var(--text); font-weight: 500; }
+  .tree .ok { color: var(--green2); }
+  .tree .crc { color: var(--dim); }
+  table.ct { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  table.ct th, table.ct td { border: 1px solid var(--line); padding: 8px 10px; text-align: center; }
+  table.ct th { color: var(--muted); font-weight: 500; font-size: 12.5px; background: var(--surface2); }
+  table.ct td.hl { background: var(--green-soft); color: var(--green2); font-weight: 600; }
+  table.ct td.lbl { text-align: left; color: var(--muted); }
+  .formula { font-family: 'Roboto Mono', monospace; font-size: 12.5px; color: var(--text); margin-top: 12px; line-height: 1.8; }
+  .formula span { color: var(--green2); }
+  .basket { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; align-items: center; }
+  .basket .r { font-size: 12px; color: var(--dim); width: 64px; }
+  .basket .d { font-size: 12.5px; padding: 4px 9px; border-radius: 999px; background: var(--surface2); border: 1px solid var(--line); }
+  .basket .d.hit { border-color: var(--green); color: var(--green2); }
+  .mr { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .mr .col h4 { margin: 0 0 8px; font-family: 'Roboto Condensed'; font-size: 13.5px; font-weight: 600; color: var(--muted); }
+  .mr .kv { font-family: 'Roboto Mono', monospace; font-size: 11.5px; padding: 4px 7px; border-radius: 6px; background: var(--surface2); margin-bottom: 5px;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .mr .kv.out { background: var(--green-soft); color: var(--green2); }
+  .pages { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .pages div { background: var(--surface2); border: 1px solid var(--line); border-radius: 10px; padding: 9px 11px; font-size: 12.5px; color: var(--muted); }
+  .pages b { display: block; color: var(--text); font-family: 'Roboto Condensed'; font-size: 14.5px; font-weight: 600; margin-bottom: 2px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .lanes.go .task { animation: none; width: var(--w); }
+    .progress.run i { animation: none; width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <div>
+      <h2>How a raw FDA file becomes this dashboard</h2>
+      <p>Green dots show data moving through the pipeline. Select any stage to see what happens inside it, or play the walkthrough to go from dataset import to the final analysis.</p>
+    </div>
+    <div class="controls">
+      <button id="prev" type="button">Previous</button>
+      <button id="play" type="button" class="primary">Play walkthrough</button>
+      <button id="next" type="button">Next</button>
+    </div>
+  </div>
+
+  <div class="canvas"><svg class="flow" id="flow" viewBox="0 0 1410 478" role="img" aria-label="SafeDose data pipeline diagram"></svg></div>
+
+  <div class="detail" aria-live="polite">
+    <div class="progress" id="progress"><i></i></div>
+    <div class="grid" id="detail"></div>
+  </div>
+</div>
+
+<script>
+const S = /*__STATS__*/{};
+const fmt = n => Number(n).toLocaleString('en-US');
+const mb = b => (b / 1048576).toFixed(0) + ' MB';
+const gb = b => (b / 1073741824).toFixed(2) + ' GB';
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ---------- layout ---------- */
+const MAIN_W = 140, MAIN_H = 104, MAIN_Y = 205;
+const AN_X = 1020, AN_W = 180, AN_H = 74;
+const nodes = [
+  { id: 1, kind: 'main', cx: 95,   title: ['openFDA', 'raw files'],    sub: S.raw_files.length + ' JSON files' },
+  { id: 2, kind: 'main', cx: 290,  title: ['Hadoop', 'FileSystem'],     sub: 'winutils + hadoop.dll' },
+  { id: 3, kind: 'main', cx: 485,  title: ['Spark', 'ingest'],          sub: 'local[4] driver' },
+  { id: 4, kind: 'main', cx: 680,  title: ['Clean &', 'standardise'],   sub: 'dedupe, filter, explode' },
+  { id: 5, kind: 'main', cx: 875,  title: ['Parquet', 'store'],         sub: 'Snappy, columnar' },
+  { id: 6, kind: 'an', cy: 55,  title: 'Signal scoring',    sub: 'PRR, ROR, chi-square' },
+  { id: 7, kind: 'an', cy: 155, title: 'Drug interactions', sub: 'Spark MLlib FP-Growth' },
+  { id: 8, kind: 'an', cy: 255, title: 'Trends & spikes',   sub: 'monthly Z-score' },
+  { id: 9, kind: 'an', cy: 355, title: 'MapReduce counts',  sub: 'map, shuffle, reduce' },
+  { id: 10, kind: 'main', cx: 1320, title: ['SafeDose', 'dashboard'], sub: 'Streamlit + Plotly' },
+];
+function box(n) {
+  if (n.kind === 'an') return { x: AN_X, y: n.cy - AN_H / 2, w: AN_W, h: AN_H };
+  return { x: n.cx - MAIN_W / 2, y: MAIN_Y - MAIN_H / 2, w: MAIN_W, h: MAIN_H };
+}
+const edges = [[1,2],[2,3],[3,4],[4,5],[5,6],[5,7],[5,8],[5,9],[6,10],[7,10],[8,10],[9,10]];
+const lanes = [
+  { x0: 22,   x1: 168,  label: 'Dataset import',       color: '#6E6E6E' },
+  { x0: 218,  x1: 362,  label: 'Hadoop storage layer', color: '#5AA9E6' },
+  { x0: 412,  x1: 753,  label: 'Spark compute: preprocessing', color: '#4DB51F' },
+  { x0: 803,  x1: 947,  label: 'Hadoop storage layer', color: '#5AA9E6' },
+  { x0: 1020, x1: 1200, label: 'Spark compute: analysis', color: '#4DB51F' },
+  { x0: 1250, x1: 1390, label: 'Presentation',         color: '#E8A23A' },
+];
+
+const svg = document.getElementById('flow');
+const NS = 'http://www.w3.org/2000/svg';
+const el = (tag, attrs = {}, parent = svg) => {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  parent.appendChild(e); return e;
+};
+const byId = Object.fromEntries(nodes.map(n => [n.id, n]));
+
+function edgePath(a, b) {
+  const A = box(byId[a]), B = box(byId[b]);
+  const x1 = A.x + A.w, y1 = A.y + A.h / 2, x2 = B.x, y2 = B.y + B.h / 2;
+  if (Math.abs(y1 - y2) < 1) return `M${x1},${y1} L${x2},${y2}`;
+  const mx = (x1 + x2) / 2;
+  return `M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}`;
+}
+
+// lanes
+lanes.forEach(l => {
+  el('rect', { x: l.x0, y: 430, width: l.x1 - l.x0, height: 34, class: 'lane-r', fill: l.color, 'fill-opacity': 0.12 });
+  el('rect', { x: l.x0, y: 430, width: l.x1 - l.x0, height: 3, fill: l.color, 'fill-opacity': 0.8 });
+  const t = el('text', { x: (l.x0 + l.x1) / 2, y: 452, 'text-anchor': 'middle', class: 'lane-t', fill: l.color });
+  t.textContent = l.label;
+});
+
+// edges + packets
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const edgeEls = edges.map(([a, b], i) => {
+  const d = edgePath(a, b);
+  const p = el('path', { d, class: 'edge', id: `e${a}_${b}` });
+  if (!reduce) {
+    const stage = a <= 4 ? a - 1 : (a === 5 ? 4 : 5);
+    for (let k = 0; k < 2; k++) {
+      const c = el('circle', { r: 4, class: 'packet', opacity: 0 });
+      const begin = (stage * 0.45 + k * 1.1).toFixed(2) + 's';
+      const am = el('animateMotion', { dur: '2.2s', repeatCount: 'indefinite', begin, path: d }, c);
+      el('animate', { attributeName: 'opacity', values: '0;1;1;0', keyTimes: '0;0.1;0.85;1', dur: '2.2s', repeatCount: 'indefinite', begin }, c);
+    }
+  }
+  return { a, b, p };
+});
+
+// nodes
+const nodeEls = {};
+nodes.forEach(n => {
+  const B = box(n);
+  const g = el('g', { class: 'node', tabindex: 0, role: 'button', 'aria-label': `Stage ${n.id}: ${Array.isArray(n.title) ? n.title.join(' ') : n.title}` });
+  el('rect', { x: B.x, y: B.y, width: B.w, height: B.h, rx: 14, class: 'box' }, g);
+  if (n.kind === 'an') {
+    el('circle', { cx: B.x + 22, cy: n.cy, r: 12, class: 'num' }, g);
+    const nt = el('text', { x: B.x + 22, y: n.cy + 4.5, 'text-anchor': 'middle', class: 'n' }, g); nt.textContent = n.id;
+    const t = el('text', { x: B.x + 44, y: n.cy - 3, class: 't', 'font-size': 16 }, g); t.textContent = n.title;
+    const s = el('text', { x: B.x + 44, y: n.cy + 17, class: 's' }, g); s.textContent = n.sub;
+  } else {
+    el('circle', { cx: B.x + 22, cy: B.y + 22, r: 12, class: 'num' }, g);
+    const nt = el('text', { x: B.x + 22, y: B.y + 26.5, 'text-anchor': 'middle', class: 'n' }, g); nt.textContent = n.id;
+    n.title.forEach((line, i) => { const t = el('text', { x: B.x + 14, y: B.y + 56 + i * 20, class: 't' }, g); t.textContent = line; });
+    const s = el('text', { x: B.x + 14, y: B.y + B.h - 11, class: 's' }, g); s.textContent = n.sub;
+  }
+  g.addEventListener('click', () => { stop(); show(n.id); });
+  g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); stop(); show(n.id); } });
+  nodeEls[n.id] = g;
+});
+
+/* ---------- stage content ---------- */
+const rawTotal = S.raw_files.reduce((a, f) => a + f.bytes, 0);
+const maxRaw = Math.max(...S.raw_files.map(f => f.bytes));
+const io = (inK, inV, outK, outV) => `<div class="io"><div class="box"><div class="k">${inK}</div><div class="v">${inV}</div></div><div class="arrow">&rarr;</div><div class="box"><div class="k">${outK}</div><div class="v">${outV}</div></div></div>`;
+const chips = arr => `<div class="tech">${arr.map(c => `<span class="chip">${c}</span>`).join('')}</div>`;
+const pts = arr => `<ul class="points">${arr.map(p => `<li>${p}</li>`).join('')}</ul>`;
+
+function rawBars() {
+  return `<div class="panel"><div class="panel-t">Files in data/raw</div><div class="bars">` +
+    S.raw_files.map(f => `<div class="row"><div class="name" title="${esc(f.name)}">${esc(f.name)}</div><div class="track"><div class="fill" style="width:${(f.bytes / maxRaw * 100).toFixed(1)}%"></div></div><div class="val">${mb(f.bytes)}</div></div>`).join('') +
+    `</div><div class="panel-c">Total ${gb(rawTotal)} of multi-line JSON. Each file holds a <b>meta</b> header and a <b>results</b> array with one object per adverse event report.</div></div>`;
+}
+function hadoopBlocks() {
+  const f = S.raw_files.reduce((a, b) => (b.bytes > a.bytes ? b : a));
+  const nBlocks = Math.ceil(f.bytes / (32 * 1048576));
+  return `<div class="panel"><div class="panel-t">How Hadoop sees the largest file (${mb(f.bytes)})</div>
+    <div style="font-size:13px;color:var(--muted)">Splittable layout: ${nBlocks} blocks of 32 MB</div>
+    <div class="blocks">${'<span></span>'.repeat(Math.min(nBlocks, 60))}</div>
+    <div style="font-size:13px;color:var(--muted);margin-top:10px">Actual read: multi-line JSON is one record tree, so it is read whole</div>
+    <div class="blocks whole"><span style="width:100%;max-width:${Math.min(nBlocks, 60) * 17 - 3}px"></span></div>
+    <div class="panel-c">A JSON array cannot be cut at an arbitrary byte offset without breaking a record, so Hadoop's input format marks the file as non-splittable and Spark gives it to a single task.</div></div>`;
+}
+function sparkLanes() {
+  const files = S.raw_files.slice().sort((a, b) => b.bytes - a.bytes);
+  let html = '<div class="panel"><div class="panel-t">Read stage on 4 local cores</div><div class="lanes go">';
+  for (let i = 0; i < 4; i++) {
+    const f = files[i];
+    html += `<div class="lane"><div class="lab">Core ${i + 1}</div><div class="trk">` +
+      (f ? `<div class="task" style="--w:${(f.bytes / maxRaw * 100).toFixed(0)}%">${mb(f.bytes)} file</div>` : `<span class="idle">idle, no file left to read</span>`) + `</div></div>`;
+  }
+  return html + `</div><div class="panel-c">One task per file, so the slowest core sets the pace. After <b>explode(results)</b> every report is its own row and later stages spread rows evenly across all cores.</div></div>`;
+}
+function dag() {
+  const ops = [
+    ['read.json', ''], ['explode(results)', ''], ['dropDuplicates(id)', 'shuffle'], ['explode(drug)', ''],
+    ['filter(suspect = 1)', ''], ['generic name', ''], ['explode(reaction)', ''], ['lower + trim', ''],
+    ['dropna', ''], ['dropDuplicates(id, drug, rx)', 'shuffle'], ['coalesce(4)', ''], ['write.parquet', 'action'],
+  ];
+  return `<div class="panel"><div class="panel-t">Spark plan for step 03 (DAG)</div><div class="dag">` +
+    ops.map((o, i) => `<span class="op ${o[1]}">${o[0]}</span>${i < ops.length - 1 ? '<span class="to">&rarr;</span>' : ''}`).join('') +
+    `</div><div class="legend"><span><i style="background:var(--surface2);border:1px solid var(--line)"></i>narrow step, no data movement</span><span><i style="background:transparent;border:1px solid var(--amber)"></i>shuffle, rows regrouped by key</span><span><i style="background:transparent;border:1px solid var(--green)"></i>action, runs the plan</span></div>
+    <div class="panel-c">Transformations are lazy. Spark only builds this plan; nothing is computed until an action such as <b>count()</b> or <b>write</b> runs it. Shuffles split the job into stages.</div></div>`;
+}
+function tree() {
+  return `<div class="panel"><div class="panel-t">What lands on disk</div><div class="tree">
+    data/processed/<b>clean_reports.parquet</b>/<br>
+    &nbsp;&nbsp;part-00000 &hellip; part-00003<b>.snappy.parquet</b><br>
+    &nbsp;&nbsp;<span class="crc">.part-0000N&hellip;.parquet.crc &nbsp;checksums</span><br>
+    &nbsp;&nbsp;<span class="ok">_SUCCESS</span> &nbsp;<span class="crc">job committed</span></div>
+    <div class="bars" style="margin-top:14px">
+      <div class="row"><div class="name">raw JSON</div><div class="track"><div class="fill" style="width:100%;background:var(--blue)"></div></div><div class="val">${gb(rawTotal)}</div></div>
+      <div class="row"><div class="name">all Parquet tables</div><div class="track"><div class="fill" style="width:${Math.max(0.6, S.parquet_bytes / rawTotal * 100).toFixed(2)}%"></div></div><div class="val">${(S.parquet_bytes / 1048576).toFixed(1)} MB</div></div>
+    </div>
+    <div class="panel-c">Hadoop's FileOutputCommitter writes every part into a _temporary folder first, then renames it into place when the job finishes, so a crashed job never leaves a half-written table.</div></div>`;
+}
+function contingency() {
+  const e = S.example;
+  return `<div class="panel"><div class="panel-t">Worked example: ${esc(e.drug)} and ${esc(e.reaction)}</div>
+    <table class="ct"><tr><th></th><th>${esc(e.reaction)}</th><th>any other reaction</th></tr>
+    <tr><td class="lbl">${esc(e.drug)}</td><td class="hl">a = ${fmt(e.a)}</td><td>b = ${fmt(e.b)}</td></tr>
+    <tr><td class="lbl">all other drugs</td><td>c = ${fmt(e.c)}</td><td>d = ${fmt(e.d)}</td></tr></table>
+    <div class="formula">PRR = [a / (a+b)] / [c / (c+d)] = <span>${e.prr.toFixed(1)}</span><br>
+    ROR = (a·d) / (b·c) = <span>${e.ror.toFixed(1)}</span><br>
+    Yates chi-square = <span>${e.chi.toFixed(1)}</span> &nbsp;(signal needs PRR ≥ 2, chi-square ≥ 4, a ≥ 3)</div>
+    <div class="panel-c">This reaction appears in ${fmt(e.a)} of ${fmt(e.a + e.b)} reports for the drug, about ${e.prr.toFixed(0)} times the rate seen with every other drug.</div></div>`;
+}
+function baskets() {
+  const p = S.top_pair;
+  return `<div class="panel"><div class="panel-t">Each report is a basket of drugs</div>
+    <div class="basket"><span class="r">report 1</span><span class="d hit">${esc(p.d1)}</span><span class="d hit">${esc(p.d2)}</span><span class="d">folic acid</span></div>
+    <div class="basket"><span class="r">report 2</span><span class="d hit">${esc(p.d1)}</span><span class="d hit">${esc(p.d2)}</span></div>
+    <div class="basket"><span class="r">report 3</span><span class="d hit">${esc(p.d1)}</span><span class="d">omeprazole</span></div>
+    <div class="formula">Most reported pair: <span>${esc(p.d1)} + ${esc(p.d2)}</span><br>
+    reports with both = <span>${fmt(p.co)}</span> &nbsp; support = <span>${(p.support * 100).toFixed(2)}%</span><br>
+    reactions per report vs. each drug alone = <span>${p.ratio.toFixed(2)}x</span></div>
+    <div class="panel-c">Baskets above are illustrative; the pair statistics are real. FP-Growth keeps pairs that occur in at least 0.3% of multi-drug reports.</div></div>`;
+}
+function sparkline() {
+  const t = S.spike, W = 420, H = 130, P = 10;
+  const max = Math.max(...t.counts, t.thr) * 1.1;
+  const x = i => P + i * (W - 2 * P) / Math.max(1, t.counts.length - 1);
+  const y = v => H - P - v / max * (H - 2 * P);
+  const pts = t.counts.map((c, i) => `${x(i).toFixed(1)},${y(c).toFixed(1)}`).join(' ');
+  const si = t.months.indexOf(t.spike_month);
+  return `<div class="panel"><div class="panel-t">${esc(t.drug)}: largest spike in the data</div>
+    <svg viewBox="0 0 ${W} ${H}" width="100%" style="display:block">
+      <line x1="${P}" x2="${W - P}" y1="${y(t.mu)}" y2="${y(t.mu)}" stroke="#6E6E6E" stroke-dasharray="4 4"/>
+      <line x1="${P}" x2="${W - P}" y1="${y(t.thr)}" y2="${y(t.thr)}" stroke="#E5534B" stroke-dasharray="2 4"/>
+      <polyline points="${pts}" fill="none" stroke="#4DB51F" stroke-width="2"/>
+      ${si >= 0 ? `<circle cx="${x(si)}" cy="${y(t.counts[si])}" r="6" fill="#E5534B"/>` : ''}
+    </svg>
+    <div class="legend"><span><i style="background:#6E6E6E"></i>usual month, ${t.mu.toFixed(1)} reports</span><span><i style="background:#E5534B"></i>spike line, mean + 3 SD = ${t.thr.toFixed(1)}</span></div>
+    <div class="formula">Z = (count − mean) / SD = <span>+${t.z.toFixed(2)}</span> in ${esc(t.spike_month)} (${fmt(t.counts[si] || 0)} reports)</div></div>`;
+}
+function mapreduce() {
+  const top = S.mr_top;
+  return `<div class="panel"><div class="panel-t">Counting drugs the MapReduce way</div><div class="mr">
+    <div class="col"><h4>Map: emit (key, 1)</h4>${top.map(t => `<div class="kv">(${esc(t[0])}, 1)</div>`).join('')}<div class="kv">(${esc(top[0][0])}, 1)</div><div class="kv">&hellip;</div></div>
+    <div class="col"><h4>Shuffle: group by key</h4>${top.map(t => `<div class="kv">${esc(t[0])}: [1, 1, 1 &hellip;]</div>`).join('')}<div class="kv">&hellip;</div></div>
+    <div class="col"><h4>Reduce: add up</h4>${top.map(t => `<div class="kv out">${esc(t[0])}: ${fmt(t[1])}</div>`).join('')}<div class="kv">&hellip;</div></div>
+    </div><div class="panel-c">${fmt(S.counts.mr)} distinct keys in the output. The shuffle moves every pair with the same key to the same reducer; this is the classic Hadoop pattern, run here on Spark's RDD API.</div></div>`;
+}
+function pagesPanel() {
+  const p = [
+    ['Overview', 'headline numbers and key findings'], ['Drug Explorer', 'one drug, all of its reactions'],
+    ['Safety Signals', 'filter and download scored pairs'], ['Compare Drugs', 'two drugs side by side'],
+    ['Trends & Spikes', 'month-by-month volume'], ['Interaction Network', 'co-reported drug graph'],
+  ];
+  return `<div class="panel"><div class="panel-t">What each page reads</div><div class="pages">${p.map(x => `<div><b>${x[0]}</b>${x[1]}</div>`).join('')}</div>
+    <div class="panel-c">The dashboard never touches the raw JSON. It loads the small Parquet tables once with PyArrow, caches them in memory, and every filter after that runs in milliseconds.</div></div>`;
+}
+
+const C = S.counts;
+const stages = {
+  1: { title: 'Import the FDA dataset', script: 'src/02_download.py',
+       lead: `The pipeline starts with bulk downloads from openFDA's drug adverse event endpoint, the public copy of the FDA Adverse Event Reporting System (FAERS).`,
+       points: [`<b>${S.raw_files.length} files, ${gb(rawTotal)}</b> are saved in data/raw.`, `Each report lists the patient, every drug they took, and every reaction they had, in a nested JSON tree.`, `The script checks that the files exist and are readable before any processing starts.`],
+       io: ['Input', 'openFDA bulk download', 'Output', `${gb(rawTotal)} raw JSON`], tech: ['openFDA API', 'Python requests', 'JSON'],
+       visual: rawBars, code: `<span class="c"># 02_download.py</span>\nfor url in openfda_partitions:\n    download(url, RAW_DATA_DIR)\nvalidate_record_counts(RAW_DATA_DIR)` },
+  2: { title: 'Hadoop opens the files', script: 'src/spark_init.py',
+       lead: `Spark never reads a disk directly. Every path goes through the Hadoop FileSystem API, which lists the files, reports their size and block layout, and streams their bytes to Spark.`,
+       points: [`<b>Hadoop 3.5.0</b> client libraries ship inside PySpark.`, `On Windows, <b>winutils.exe</b> and <b>hadoop.dll</b> in the project's hadoop/bin folder give Hadoop the file permissions it expects from Linux.`, `The same code would run unchanged against HDFS on a cluster; only the path prefix changes from file:// to hdfs://.`],
+       io: ['Input', 'data/raw/*.json', 'Output', 'file splits for Spark'], tech: ['Hadoop FileSystem API', 'LocalFileSystem', 'winutils.exe', 'hadoop.dll'],
+       visual: hadoopBlocks, code: `os.environ["HADOOP_HOME"] = "D:/SafeDose/hadoop"\nfs = jvm.org.apache.hadoop.fs.FileSystem.get(conf)\nstatus = fs.getFileStatus(path)\nstatus.getLen(), status.getBlockSize()` },
+  3: { title: 'Spark reads and unpacks', script: 'src/03_clean.py',
+       lead: `A SparkSession starts in local mode with four worker cores and a 6 GB driver. Spark reads the JSON, works out its schema, and turns the results array into one row per report.`,
+       points: [`<b>local[4]</b> means four tasks run at the same time on this machine, the same model a cluster uses with many machines.`, `Spark makes a first pass over the JSON just to infer the nested schema.`, `<b>explode(results)</b> turns each file's array into individual report rows.`],
+       io: ['Input', `${S.raw_files.length} JSON files`, 'Output', 'one row per report'], tech: ['Apache Spark', 'Spark SQL', 'DataFrame API'],
+       visual: sparkLanes, code: `spark = get_spark_session(memory="6g")   <span class="c"># local[4]</span>\nraw = spark.read.option("multiline", "true").json(paths)\ndf = raw.select(explode("results").alias("r")).select("r.*")` },
+  4: { title: 'Clean and standardise', script: 'src/03_clean.py',
+       lead: `This is the preprocessing stage. Spark removes duplicate reports, keeps only the drug each reporter suspected, and normalises names so the same drug or reaction is always spelled the same way.`,
+       points: [`<b>Duplicates removed</b> by safetyreportid, leaving ${fmt(C.reports)} unique reports.`, `Only <b>primary suspect</b> drugs are kept (drugcharacterization = 1), not every medicine the patient happened to take.`, `Drug names use the openFDA <b>generic name</b> when available, so brand and generic merge. Reactions use MedDRA preferred terms.`, `Each report is exploded to <b>one row per drug and reaction</b>, giving ${fmt(C.clean_rows)} rows.`],
+       io: ['Input', 'nested report rows', 'Output', `${fmt(C.clean_rows)} clean rows`], tech: ['dropDuplicates', 'explode', 'filter', 'lower / trim', 'cast'],
+       visual: dag, code: `df = df.dropDuplicates(["safetyreportid"])\ndf = df.withColumn("drug", explode("patient.drug"))\ndf = df.filter(col("drug.drugcharacterization") == "1")\ndf = df.withColumn("reaction", explode("patient.reaction"))` },
+  5: { title: 'Store as Parquet', script: 'src/03_clean.py',
+       lead: `The clean table is written as Parquet, a compressed columnar format from the Hadoop ecosystem. Every later step reads this table instead of the raw JSON.`,
+       points: [`<b>coalesce(4)</b> writes four part files, one per core.`, `Snappy compression and columnar layout shrink ${gb(rawTotal)} of JSON to <b>${(S.parquet_bytes / 1048576).toFixed(1)} MB</b> across all output tables.`, `Hadoop writes a <b>.crc</b> checksum beside each part and a <b>_SUCCESS</b> marker when the job commits.`],
+       io: ['Input', `${fmt(C.clean_rows)} rows in memory`, 'Output', 'clean_reports.parquet'], tech: ['Apache Parquet', 'Snappy', 'FileOutputCommitter', 'ChecksumFileSystem'],
+       visual: tree, code: `clean_df.coalesce(4) \\\n    .write.mode("overwrite") \\\n    .parquet("data/processed/clean_reports.parquet")` },
+  6: { title: 'Score every drug and reaction pair', script: 'src/04_signals.py',
+       lead: `Disproportionality analysis asks one question for every pair: is this reaction reported more often with this drug than with all other drugs?`,
+       points: [`Spark counts reports per drug, per reaction, and per pair with <b>groupBy</b>, then joins them into a 2×2 table for each pair.`, `${fmt(C.pairs)} pairs are scored with <b>PRR, ROR with 95% confidence interval, and Yates chi-square</b>.`, `<b>${fmt(C.signals)}</b> pairs meet the Evans criteria and are flagged as signals.`],
+       io: ['Input', 'clean_reports.parquet', 'Output', `signals.parquet, ${fmt(C.pairs)} rows`], tech: ['groupBy + countDistinct', 'join', 'PRR', 'ROR', 'chi-square'],
+       visual: contingency, code: `a = df.groupBy("drug_name", "reaction_name") \\\n      .agg(countDistinct("safetyreportid").alias("a"))\npairs = a.join(drug_counts, "drug_name") \\\n         .join(reaction_counts, "reaction_name")\nis_signal = (a >= 3) & (prr >= 2.0) & (chi_square >= 4.0)` },
+  7: { title: 'Find drugs reported together', script: 'src/05_interactions.py',
+       lead: `Spark MLlib's FP-Growth algorithm treats each report as a shopping basket of drugs and finds pairs that appear together often.`,
+       points: [`Only reports naming two or more suspect drugs are used.`, `Settings: <b>minSupport 0.003</b>, minConfidence 0.1.`, `For each frequent pair Spark compares reactions per report against each drug alone, plus the serious-outcome rate. ${fmt(C.high_risk)} of ${fmt(C.interactions)} pairs are flagged high risk.`],
+       io: ['Input', 'clean_reports.parquet', 'Output', `interactions.parquet, ${fmt(C.interactions)} pairs`], tech: ['Spark MLlib', 'FP-Growth', 'Window functions'],
+       visual: baskets, code: `baskets = reports.filter(size("drugs") >= 2)\nfp = FPGrowth(itemsCol="drugs", minSupport=0.003,\n              minConfidence=0.1)\npairs = fp.fit(baskets).freqItemsets` },
+  8: { title: 'Watch volumes month by month', script: 'src/06_trends.py',
+       lead: `A sudden jump in reports can be the first sign of a new safety problem. Spark builds a monthly series for each drug and for each signal pair, then measures how unusual each month is.`,
+       points: [`Monthly counts use <b>groupBy(drug, month)</b>.`, `A <b>window function</b> computes each series' own mean and standard deviation.`, `A month is a spike when <b>Z ≥ 3</b> and it has at least 3 reports. ${fmt(C.spikes)} spikes found in ${fmt(C.trend_rows)} monthly rows.`],
+       io: ['Input', 'clean + signals tables', 'Output', `trends.parquet, ${fmt(C.trend_rows)} rows`], tech: ['Window', 'avg / stddev', 'broadcast join', 'Z-score'],
+       visual: sparkline, code: `w = Window.partitionBy("drug_name", "reaction_name")\ndf = df.withColumn("mean_count", avg("report_count").over(w)) \\\n       .withColumn("std_count", stddev("report_count").over(w))\nis_spike = (z_score >= 3.0) & (report_count >= 3)` },
+  9: { title: 'Hadoop MapReduce counts', script: 'src/07_hadoop_showcase.py',
+       lead: `This step shows the original Hadoop processing model directly: map each record to a key and a 1, shuffle so equal keys meet, and reduce by adding.`,
+       points: [`It also inspects files through the <b>Hadoop FileSystem API</b>: length, block size, replication.`, `The counts are computed with Spark's RDD API using <b>map</b> and <b>reduceByKey</b>, the same contract as a Hadoop MapReduce job.`, `Results are saved to hadoop_mr_counts and appear at the bottom of this page.`],
+       io: ['Input', 'clean_reports.parquet', 'Output', `${fmt(C.mr)} key counts`], tech: ['MapReduce', 'RDD', 'reduceByKey', 'Hadoop FileSystem API'],
+       visual: mapreduce, code: `counts = (rdd.map(lambda r: (r["drug_name"], 1))\n            .reduceByKey(lambda a, b: a + b)\n            .sortBy(lambda kv: kv[1], ascending=False))` },
+  10: { title: 'Explore in the dashboard', script: 'src/app.py',
+       lead: `The final step is the analysis you are looking at. Streamlit loads the Parquet outputs and Plotly draws every chart, so reviewers can explore signals without running Spark again.`,
+       points: [`Tables load once and are cached with <b>st.cache_data</b>.`, `Every filter, search, and drug comparison runs on the small pre-computed tables.`, `Signals stay hypotheses: spontaneous reports show association, not causation.`],
+       io: ['Input', '5 Parquet tables', 'Output', 'interactive analysis'], tech: ['Streamlit', 'Plotly', 'pandas', 'PyArrow', 'NetworkX'],
+       visual: pagesPanel, code: `clean = pd.read_parquet("data/processed/clean_reports.parquet")\nsignals = pd.read_parquet("data/processed/signals.parquet")\nst.plotly_chart(volcano_plot(signals))` },
+};
+
+/* ---------- interaction ---------- */
+let current = 1, timer = null;
+const DUR = 7000;
+const detail = document.getElementById('detail');
+const progress = document.getElementById('progress');
+const playBtn = document.getElementById('play');
+
+function show(id) {
+  current = id;
+  Object.entries(nodeEls).forEach(([k, g]) => g.classList.toggle('active', Number(k) === id));
+  edgeEls.forEach(e => e.p.classList.toggle('on', e.b === id || (id === 10 && e.b === 10)));
+  const s = stages[id];
+  detail.innerHTML = `<div>
+      <div class="step">Stage ${id} of 10 &nbsp; ${esc(s.script)}</div>
+      <h3>${s.title}</h3>
+      <p class="lead">${s.lead}</p>
+      ${pts(s.points)}
+      ${io(...s.io)}
+      ${chips(s.tech)}
+    </div>
+    <div>${s.visual()}<pre>${s.code}</pre></div>`;
+}
+function restartProgress() {
+  progress.classList.remove('run'); void progress.offsetWidth;
+  progress.style.setProperty('--dur', DUR + 'ms'); progress.classList.add('run');
+}
+function play() {
+  playBtn.textContent = 'Pause walkthrough';
+  restartProgress();
+  timer = setInterval(() => { show(current % 10 + 1); restartProgress(); }, DUR);
+}
+function stop() {
+  if (timer) clearInterval(timer);
+  timer = null; playBtn.textContent = 'Play walkthrough'; progress.classList.remove('run');
+}
+playBtn.addEventListener('click', () => (timer ? stop() : (current === 10 && show(1), play())));
+document.getElementById('next').addEventListener('click', () => { stop(); show(current % 10 + 1); });
+document.getElementById('prev').addEventListener('click', () => { stop(); show(current === 1 ? 10 : current - 1); });
+show(1);
+</script>
+</body>
+</html>
