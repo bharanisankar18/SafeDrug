@@ -43,7 +43,7 @@ There are **millions** of these reports.
 ## 🔄 How it works
 
 <div align="center">
-  <img src="docs/architecture.svg" alt="SafeDose architecture: openFDA reports go through Hadoop and Spark cleaning into Parquet tables, then four analyses (signals, drug combos, trends, MapReduce) feed the Streamlit dashboard" width="850">
+  <img src="docs/safedose-architecture.svg" alt="SafeDose architecture: openFDA reports go through Hadoop and Spark cleaning into Parquet tables, then four analyses (signals, drug combos, trends, MapReduce) feed the Streamlit dashboard" width="850">
 </div>
 
 1. **📥 Get data** – download FDA report files (1.7 GB)
