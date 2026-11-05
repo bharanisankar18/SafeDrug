@@ -1,0 +1,4671 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "note": "SafeDose teaching sample: 10 real openFDA reports plus 1 duplicate copy of 23388843",
+    "results": {
+      "total": 11
+    }
+  },
+  "results": [
+    {
+      "safetyreportversion": "1",
+      "safetyreportid": "23388843",
+      "primarysourcecountry": "US",
+      "occurcountry": "US",
+      "transmissiondateformat": "102",
+      "transmissiondate": "20240409",
+      "reporttype": "3",
+      "serious": "1",
+      "seriousnessdeath": "1",
+      "seriousnesslifethreatening": "2",
+      "seriousnesshospitalization": "2",
+      "seriousnessdisabling": "2",
+      "seriousnesscongenitalanomali": "2",
+      "seriousnessother": "1",
+      "receivedateformat": "102",
+      "receivedate": "20240110",
+      "receiptdateformat": "102",
+      "receiptdate": "20240110",
+      "fulfillexpeditecriteria": "1",
+      "primarysource": {
+        "reportercountry": "US",
+        "qualification": "1",
+        "literaturereference": "David D. Gummin, James B. Mowry, Michael C. Beuhler, Daniel A. Spyker, Laura J. Rivers, Ryan Feldman, Kaitlyn Brown, Nathaniel P.T. Pham, Alvin C. Bronstein +amp; Carol DesLauriers (2023) 2022 Annual Report of the National Poison Data System (NPDS) from America^s Poison Centers : 40th Annual Report, Clinical Toxicology, 61:10, 717-939"
+      },
+      "sender": {
+        "sendertype": "2",
+        "senderorganization": "FDA-Public Use"
+      },
+      "receiver": {
+        "receivertype": "6",
+        "receiverorganization": "FDA"
+      },
+      "patient": {
+        "patientonsetage": "29",
+        "patientonsetageunit": "801",
+        "patientsex": "1",
+        "reaction": [
+          {
+            "reactionmeddraversionpt": "26.1",
+            "reactionmeddrapt": "Drug abuse",
+            "reactionoutcome": "5"
+          }
+        ],
+        "drug": [
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "FENTANYL",
+            "drugdosagetext": "UNK",
+            "drugadministrationroute": "065",
+            "drugindication": "Product used for unknown indication",
+            "actiondrug": "6",
+            "drugadditional": "4",
+            "activesubstance": {
+              "activesubstancename": "FENTANYL\\FENTANYL CITRATE"
+            },
+            "openfda": {
+              "application_number": [
+                "ANDA077449",
+                "ANDA202097",
+                "ANDA076258"
+              ],
+              "brand_name": [
+                "FENTANYL",
+                "FENTANYL SYSTEM"
+              ],
+              "generic_name": [
+                "FENTANYL"
+              ],
+              "manufacturer_name": [
+                "Aveva Drug Delivery Systems Inc.",
+                "INGENUS PHARMACEUTICALS, LLC",
+                "ALVOGEN",
+                "Mylan Pharmaceuticals Inc."
+              ],
+              "product_ndc": [
+                "3215-7701",
+                "3215-7702",
+                "3215-7703",
+                "3215-7704",
+                "3215-7705",
+                "3215-7706",
+                "3215-7707",
+                "3215-7708",
+                "50742-549",
+                "50742-550",
+                "50742-551",
+                "50742-552",
+                "50742-553",
+                "50742-554",
+                "50742-555",
+                "50742-556",
+                "47781-423",
+                "47781-424",
+                "47781-426",
+                "47781-427",
+                "47781-428",
+                "0378-9119",
+                "0378-9121",
+                "0378-9125",
+                "0378-9122",
+                "0378-9126",
+                "0378-9123",
+                "0378-9127",
+                "0378-9124"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "TRANSDERMAL"
+              ],
+              "substance_name": [
+                "FENTANYL"
+              ],
+              "rxcui": [
+                "197696",
+                "245134",
+                "245135",
+                "245136",
+                "577057",
+                "1603495",
+                "1603498",
+                "1603501"
+              ],
+              "spl_id": [
+                "4edfc77d-dee4-611b-e063-6294a90a47f8",
+                "4edfd739-fc61-0f08-e063-6394a90ae646",
+                "4b8493ea-0ce4-6949-e063-6294a90a8861",
+                "a6e21c86-57e5-4be5-b1bb-c894893991b2"
+              ],
+              "spl_set_id": [
+                "73897c38-e4ec-40bc-9f41-3359ee23a5a8",
+                "bf02ffd0-cc5d-446b-b648-378f6885052f",
+                "242759ef-cb6d-4e3e-9f8d-5e31efa1f289",
+                "2a2238e9-4b5d-c56d-8663-dd354ff9ae0c"
+              ],
+              "package_ndc": [
+                "3215-7701-01",
+                "3215-7701-05",
+                "3215-7702-01",
+                "3215-7702-05",
+                "3215-7703-01",
+                "3215-7703-05",
+                "3215-7704-01",
+                "3215-7704-05",
+                "3215-7705-01",
+                "3215-7705-05",
+                "3215-7706-01",
+                "3215-7706-05",
+                "3215-7707-01",
+                "3215-7707-05",
+                "3215-7708-01",
+                "3215-7708-05",
+                "50742-549-01",
+                "50742-549-05",
+                "50742-550-01",
+                "50742-550-05",
+                "50742-551-01",
+                "50742-551-05",
+                "50742-552-01",
+                "50742-552-05",
+                "50742-553-01",
+                "50742-553-05",
+                "50742-554-01",
+                "50742-554-05",
+                "50742-555-01",
+                "50742-555-05",
+                "50742-556-01",
+                "50742-556-05",
+                "47781-423-11",
+                "47781-423-47",
+                "47781-424-11",
+                "47781-424-47",
+                "47781-426-11",
+                "47781-426-47",
+                "47781-427-11",
+                "47781-427-47",
+                "47781-428-11",
+                "47781-428-47",
+                "0378-9119-16",
+                "0378-9119-98",
+                "0378-9121-16",
+                "0378-9121-98",
+                "0378-9125-16",
+                "0378-9125-98",
+                "0378-9122-16",
+                "0378-9122-98",
+                "0378-9126-16",
+                "0378-9126-98",
+                "0378-9123-16",
+                "0378-9123-98",
+                "0378-9127-16",
+                "0378-9127-98",
+                "0378-9124-16",
+                "0378-9124-98"
+              ],
+              "nui": [
+                "N0000175684",
+                "N0000175690"
+              ],
+              "pharm_class_moa": [
+                "Full Opioid Agonists [MoA]"
+              ],
+              "pharm_class_epc": [
+                "Opioid Agonist [EPC]"
+              ],
+              "unii": [
+                "UF599785JZ"
+              ]
+            }
+          },
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "ALPRAZOLAM",
+            "drugdosagetext": "UNK",
+            "drugadministrationroute": "065",
+            "drugindication": "Product used for unknown indication",
+            "actiondrug": "6",
+            "drugadditional": "4",
+            "activesubstance": {
+              "activesubstancename": "ALPRAZOLAM"
+            },
+            "openfda": {
+              "application_number": [
+                "ANDA074342",
+                "ANDA203346",
+                "ANDA090871",
+                "NDA018276",
+                "ANDA074174",
+                "ANDA078088",
+                "ANDA078561",
+                "ANDA078387",
+                "ANDA200739",
+                "NDA021434",
+                "ANDA074312",
+                "ANDA074112",
+                "ANDA074909"
+              ],
+              "brand_name": [
+                "ALPRAZOLAM",
+                "XANAX",
+                "ALPRAZOLAM XR"
+              ],
+              "generic_name": [
+                "ALPRAZOLAM"
+              ],
+              "manufacturer_name": [
+                "Actavis Pharma, Inc.",
+                "Aurobindo Pharma Limited",
+                "Mylan Pharmaceuticals Inc.",
+                "ANI Pharmaceuticals, Inc.",
+                "Par Health USA, LLC",
+                "Amneal Pharmaceuticals LLC",
+                "Natco Pharma USA LLC",
+                "PHARMACIA & UPJOHN COMPANY LLC",
+                "Hikma Pharmaceuticals USA Inc.",
+                "Sandoz Inc"
+              ],
+              "product_ndc": [
+                "0228-2027",
+                "0228-2029",
+                "0228-2031",
+                "0228-2039",
+                "65862-676",
+                "65862-677",
+                "65862-678",
+                "65862-679",
+                "65862-454",
+                "65862-455",
+                "65862-456",
+                "65862-457",
+                "59762-3719",
+                "59762-3720",
+                "59762-3721",
+                "59762-3722",
+                "70954-508",
+                "70954-509",
+                "70954-510",
+                "70954-511",
+                "49884-110",
+                "49884-111",
+                "49884-213",
+                "49884-214",
+                "0228-4019",
+                "0228-4022",
+                "0228-4024",
+                "0228-4025",
+                "65162-809",
+                "65162-810",
+                "65162-812",
+                "65162-813",
+                "69339-199",
+                "69339-200",
+                "69339-201",
+                "69339-202",
+                "0009-0029",
+                "0009-0055",
+                "0009-0090",
+                "0009-0094",
+                "59762-0057",
+                "59762-0059",
+                "59762-0066",
+                "59762-0068",
+                "0054-3068",
+                "0781-1061",
+                "0781-1077",
+                "0781-1079",
+                "0781-1089"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "ORAL"
+              ],
+              "substance_name": [
+                "ALPRAZOLAM"
+              ],
+              "rxcui": [
+                "197321",
+                "197322",
+                "308047",
+                "308048",
+                "433798",
+                "433799",
+                "433800",
+                "433801",
+                "485413",
+                "485414",
+                "485415",
+                "485416",
+                "141927",
+                "141928",
+                "214003",
+                "214004",
+                "308050"
+              ],
+              "spl_id": [
+                "08d09d46-386d-4dc8-a0c1-5711261c6282",
+                "7527aeb7-8912-404d-afb7-8c692c84422b",
+                "f2273fea-bd3b-4ef5-b698-73ba677722e3",
+                "0deddc26-2764-4879-a0e4-a29fff246244",
+                "18a6f29f-7eb8-4aa2-8121-d554c59da191",
+                "38e94d5e-f7e2-4349-94f2-2fba605f5ae6",
+                "38c5b407-25a1-48f5-960e-87ef637b644c",
+                "4b2e21bc-ca1c-4ff5-a996-32f1e94d2a91",
+                "885d0fec-f1a6-42f4-8617-1d048cb15ee9",
+                "f5323eac-81d0-4096-ac15-2f25220c5c28",
+                "70f0098e-50b5-4e61-b4e0-141a55d92267",
+                "d7b8cdff-1337-4ef6-a5fb-654f1d655bfe",
+                "4c8c7366-aa3b-4124-9d64-67fb0ead6e15"
+              ],
+              "spl_set_id": [
+                "a23063c0-099a-4256-b95f-3a857bbf704b",
+                "d2fd0b3e-9b78-44d0-82a6-96d6c6238750",
+                "326fa31a-5420-429b-9f7f-170cb38f64bd",
+                "13930c94-d83a-414f-be35-b1fef35f738d",
+                "38428a1b-718c-49cc-94ae-2e3644ba6256",
+                "ff1630b4-2044-433c-96bc-0bb4ae8d42a0",
+                "5ceed721-2e65-4c81-bd84-f110b1ac9d2e",
+                "259387c1-e374-4bc2-9510-5f7f2c60d1a5",
+                "b3c55877-2538-4892-bdb1-d618c643d29c",
+                "388e249d-b9b6-44c3-9f8f-880eced0239f",
+                "1338d1c9-7c75-42ed-95f3-9eb1b6fc51d3",
+                "b945ac6f-796e-41ef-85e9-61007e4a4e9a",
+                "d9b0e228-17cf-40d7-b62e-5050311c571c"
+              ],
+              "package_ndc": [
+                "0228-2027-10",
+                "0228-2027-50",
+                "0228-2027-96",
+                "0228-2029-10",
+                "0228-2029-50",
+                "0228-2029-96",
+                "0228-2031-10",
+                "0228-2031-50",
+                "0228-2031-96",
+                "0228-2039-10",
+                "65862-676-01",
+                "65862-676-05",
+                "65862-676-99",
+                "65862-677-01",
+                "65862-677-05",
+                "65862-677-99",
+                "65862-678-01",
+                "65862-678-05",
+                "65862-678-99",
+                "65862-679-01",
+                "65862-679-05",
+                "65862-679-99",
+                "65862-454-60",
+                "65862-454-99",
+                "65862-454-71",
+                "65862-455-60",
+                "65862-455-99",
+                "65862-455-71",
+                "65862-456-60",
+                "65862-456-99",
+                "65862-456-71",
+                "65862-457-60",
+                "65862-457-99",
+                "65862-457-71",
+                "59762-3719-1",
+                "59762-3719-3",
+                "59762-3719-4",
+                "59762-3720-1",
+                "59762-3720-3",
+                "59762-3720-4",
+                "59762-3721-1",
+                "59762-3721-3",
+                "59762-3721-4",
+                "59762-3722-1",
+                "59762-3722-3",
+                "70954-508-10",
+                "70954-508-20",
+                "70954-508-30",
+                "70954-509-10",
+                "70954-509-20",
+                "70954-509-30",
+                "70954-510-10",
+                "70954-510-20",
+                "70954-510-30",
+                "70954-511-10",
+                "70954-511-20",
+                "49884-110-74",
+                "49884-111-74",
+                "49884-213-74",
+                "49884-214-74",
+                "0228-4019-11",
+                "0228-4022-11",
+                "0228-4024-11",
+                "0228-4025-11",
+                "65162-809-03",
+                "65162-809-06",
+                "65162-809-50",
+                "65162-810-03",
+                "65162-810-06",
+                "65162-810-50",
+                "65162-812-03",
+                "65162-812-06",
+                "65162-812-50",
+                "65162-813-03",
+                "65162-813-06",
+                "65162-813-50",
+                "69339-199-01",
+                "69339-199-05",
+                "69339-199-10",
+                "69339-200-01",
+                "69339-200-05",
+                "69339-200-10",
+                "69339-201-01",
+                "69339-201-05",
+                "69339-201-10",
+                "69339-202-01",
+                "69339-202-05",
+                "69339-202-10",
+                "0009-0029-01",
+                "0009-0029-46",
+                "0009-0029-02",
+                "0009-0029-14",
+                "0009-0055-01",
+                "0009-0055-46",
+                "0009-0055-03",
+                "0009-0055-15",
+                "0009-0090-01",
+                "0009-0090-04",
+                "0009-0090-13",
+                "0009-0094-01",
+                "0009-0094-03",
+                "59762-0057-1",
+                "59762-0059-1",
+                "59762-0066-1",
+                "59762-0068-1",
+                "0054-3068-44",
+                "0781-1061-01",
+                "0781-1061-05",
+                "0781-1061-10",
+                "0781-1077-01",
+                "0781-1077-05",
+                "0781-1077-10",
+                "0781-1079-01",
+                "0781-1079-05",
+                "0781-1079-10",
+                "0781-1089-01",
+                "0781-1089-05"
+              ],
+              "nui": [
+                "N0000175694",
+                "M0002356"
+              ],
+              "pharm_class_epc": [
+                "Benzodiazepine [EPC]"
+              ],
+              "pharm_class_cs": [
+                "Benzodiazepines [CS]"
+              ],
+              "unii": [
+                "YU55MQ3IZY"
+              ]
+            }
+          },
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "HEROIN",
+            "drugdosagetext": "UNK",
+            "drugadministrationroute": "065",
+            "drugindication": "Product used for unknown indication",
+            "actiondrug": "6",
+            "drugadditional": "4",
+            "activesubstance": {
+              "activesubstancename": "DIAMORPHINE"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "safetyreportversion": "1",
+      "safetyreportid": "23504076",
+      "primarysourcecountry": "US",
+      "occurcountry": "US",
+      "transmissiondateformat": "102",
+      "transmissiondate": "20240410",
+      "reporttype": "1",
+      "serious": "1",
+      "seriousnessdeath": "1",
+      "seriousnesslifethreatening": "2",
+      "seriousnesshospitalization": "2",
+      "seriousnessdisabling": "2",
+      "seriousnesscongenitalanomali": "2",
+      "seriousnessother": "2",
+      "receivedateformat": "102",
+      "receivedate": "20240209",
+      "receiptdateformat": "102",
+      "receiptdate": "20240209",
+      "fulfillexpeditecriteria": "1",
+      "companynumb": "US-ENDO PHARMACEUTICALS INC-2024-000644",
+      "primarysource": {
+        "reportercountry": "US",
+        "qualification": "1",
+        "literaturereference": "Gummin DD, Mowry JB, Beuhler MC, Spyker DA, Rivers LJ, Feldman R, et al.. 2022 Annual Report of the National Poison Data System (NPDS) from America^s Poison Centers: 40th Annual Report. Clinical Toxicology. 2023;61 (10):717-939"
+      },
+      "sender": {
+        "sendertype": "2",
+        "senderorganization": "FDA-Public Use"
+      },
+      "receiver": {
+        "receivertype": "6",
+        "receiverorganization": "FDA"
+      },
+      "patient": {
+        "patientonsetage": "28",
+        "patientonsetageunit": "801",
+        "patientsex": "1",
+        "reaction": [
+          {
+            "reactionmeddraversionpt": "26.1",
+            "reactionmeddrapt": "Cardio-respiratory arrest",
+            "reactionoutcome": "5"
+          },
+          {
+            "reactionmeddraversionpt": "26.1",
+            "reactionmeddrapt": "Drug abuse",
+            "reactionoutcome": "5"
+          }
+        ],
+        "drug": [
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "ALPRAZOLAM",
+            "drugauthorizationnumb": "078088",
+            "drugdosagetext": "UNK UNKNOWN, UNKNOWN",
+            "drugdosageform": "Oral Disintegrating Tablets",
+            "drugadministrationroute": "065",
+            "drugindication": "Product used for unknown indication",
+            "actiondrug": "6",
+            "drugadditional": "4",
+            "activesubstance": {
+              "activesubstancename": "ALPRAZOLAM"
+            },
+            "openfda": {
+              "application_number": [
+                "ANDA074342",
+                "ANDA203346",
+                "ANDA090871",
+                "NDA018276",
+                "ANDA074174",
+                "ANDA078088",
+                "ANDA078561",
+                "ANDA078387",
+                "ANDA200739",
+                "NDA021434",
+                "ANDA074312",
+                "ANDA074112",
+                "ANDA074909"
+              ],
+              "brand_name": [
+                "ALPRAZOLAM",
+                "XANAX",
+                "ALPRAZOLAM XR"
+              ],
+              "generic_name": [
+                "ALPRAZOLAM"
+              ],
+              "manufacturer_name": [
+                "Actavis Pharma, Inc.",
+                "Aurobindo Pharma Limited",
+                "Mylan Pharmaceuticals Inc.",
+                "ANI Pharmaceuticals, Inc.",
+                "Par Health USA, LLC",
+                "Amneal Pharmaceuticals LLC",
+                "Natco Pharma USA LLC",
+                "PHARMACIA & UPJOHN COMPANY LLC",
+                "Hikma Pharmaceuticals USA Inc.",
+                "Sandoz Inc"
+              ],
+              "product_ndc": [
+                "0228-2027",
+                "0228-2029",
+                "0228-2031",
+                "0228-2039",
+                "65862-676",
+                "65862-677",
+                "65862-678",
+                "65862-679",
+                "65862-454",
+                "65862-455",
+                "65862-456",
+                "65862-457",
+                "59762-3719",
+                "59762-3720",
+                "59762-3721",
+                "59762-3722",
+                "70954-508",
+                "70954-509",
+                "70954-510",
+                "70954-511",
+                "49884-110",
+                "49884-111",
+                "49884-213",
+                "49884-214",
+                "0228-4019",
+                "0228-4022",
+                "0228-4024",
+                "0228-4025",
+                "65162-809",
+                "65162-810",
+                "65162-812",
+                "65162-813",
+                "69339-199",
+                "69339-200",
+                "69339-201",
+                "69339-202",
+                "0009-0029",
+                "0009-0055",
+                "0009-0090",
+                "0009-0094",
+                "59762-0057",
+                "59762-0059",
+                "59762-0066",
+                "59762-0068",
+                "0054-3068",
+                "0781-1061",
+                "0781-1077",
+                "0781-1079",
+                "0781-1089"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "ORAL"
+              ],
+              "substance_name": [
+                "ALPRAZOLAM"
+              ],
+              "rxcui": [
+                "197321",
+                "197322",
+                "308047",
+                "308048",
+                "433798",
+                "433799",
+                "433800",
+                "433801",
+                "485413",
+                "485414",
+                "485415",
+                "485416",
+                "141927",
+                "141928",
+                "214003",
+                "214004",
+                "308050"
+              ],
+              "spl_id": [
+                "08d09d46-386d-4dc8-a0c1-5711261c6282",
+                "7527aeb7-8912-404d-afb7-8c692c84422b",
+                "f2273fea-bd3b-4ef5-b698-73ba677722e3",
+                "0deddc26-2764-4879-a0e4-a29fff246244",
+                "18a6f29f-7eb8-4aa2-8121-d554c59da191",
+                "38e94d5e-f7e2-4349-94f2-2fba605f5ae6",
+                "38c5b407-25a1-48f5-960e-87ef637b644c",
+                "4b2e21bc-ca1c-4ff5-a996-32f1e94d2a91",
+                "885d0fec-f1a6-42f4-8617-1d048cb15ee9",
+                "f5323eac-81d0-4096-ac15-2f25220c5c28",
+                "70f0098e-50b5-4e61-b4e0-141a55d92267",
+                "d7b8cdff-1337-4ef6-a5fb-654f1d655bfe",
+                "4c8c7366-aa3b-4124-9d64-67fb0ead6e15"
+              ],
+              "spl_set_id": [
+                "a23063c0-099a-4256-b95f-3a857bbf704b",
+                "d2fd0b3e-9b78-44d0-82a6-96d6c6238750",
+                "326fa31a-5420-429b-9f7f-170cb38f64bd",
+                "13930c94-d83a-414f-be35-b1fef35f738d",
+                "38428a1b-718c-49cc-94ae-2e3644ba6256",
+                "ff1630b4-2044-433c-96bc-0bb4ae8d42a0",
+                "5ceed721-2e65-4c81-bd84-f110b1ac9d2e",
+                "259387c1-e374-4bc2-9510-5f7f2c60d1a5",
+                "b3c55877-2538-4892-bdb1-d618c643d29c",
+                "388e249d-b9b6-44c3-9f8f-880eced0239f",
+                "1338d1c9-7c75-42ed-95f3-9eb1b6fc51d3",
+                "b945ac6f-796e-41ef-85e9-61007e4a4e9a",
+                "d9b0e228-17cf-40d7-b62e-5050311c571c"
+              ],
+              "package_ndc": [
+                "0228-2027-10",
+                "0228-2027-50",
+                "0228-2027-96",
+                "0228-2029-10",
+                "0228-2029-50",
+                "0228-2029-96",
+                "0228-2031-10",
+                "0228-2031-50",
+                "0228-2031-96",
+                "0228-2039-10",
+                "65862-676-01",
+                "65862-676-05",
+                "65862-676-99",
+                "65862-677-01",
+                "65862-677-05",
+                "65862-677-99",
+                "65862-678-01",
+                "65862-678-05",
+                "65862-678-99",
+                "65862-679-01",
+                "65862-679-05",
+                "65862-679-99",
+                "65862-454-60",
+                "65862-454-99",
+                "65862-454-71",
+                "65862-455-60",
+                "65862-455-99",
+                "65862-455-71",
+                "65862-456-60",
+                "65862-456-99",
+                "65862-456-71",
+                "65862-457-60",
+                "65862-457-99",
+                "65862-457-71",
+                "59762-3719-1",
+                "59762-3719-3",
+                "59762-3719-4",
+                "59762-3720-1",
+                "59762-3720-3",
+                "59762-3720-4",
+                "59762-3721-1",
+                "59762-3721-3",
+                "59762-3721-4",
+                "59762-3722-1",
+                "59762-3722-3",
+                "70954-508-10",
+                "70954-508-20",
+                "70954-508-30",
+                "70954-509-10",
+                "70954-509-20",
+                "70954-509-30",
+                "70954-510-10",
+                "70954-510-20",
+                "70954-510-30",
+                "70954-511-10",
+                "70954-511-20",
+                "49884-110-74",
+                "49884-111-74",
+                "49884-213-74",
+                "49884-214-74",
+                "0228-4019-11",
+                "0228-4022-11",
+                "0228-4024-11",
+                "0228-4025-11",
+                "65162-809-03",
+                "65162-809-06",
+                "65162-809-50",
+                "65162-810-03",
+                "65162-810-06",
+                "65162-810-50",
+                "65162-812-03",
+                "65162-812-06",
+                "65162-812-50",
+                "65162-813-03",
+                "65162-813-06",
+                "65162-813-50",
+                "69339-199-01",
+                "69339-199-05",
+                "69339-199-10",
+                "69339-200-01",
+                "69339-200-05",
+                "69339-200-10",
+                "69339-201-01",
+                "69339-201-05",
+                "69339-201-10",
+                "69339-202-01",
+                "69339-202-05",
+                "69339-202-10",
+                "0009-0029-01",
+                "0009-0029-46",
+                "0009-0029-02",
+                "0009-0029-14",
+                "0009-0055-01",
+                "0009-0055-46",
+                "0009-0055-03",
+                "0009-0055-15",
+                "0009-0090-01",
+                "0009-0090-04",
+                "0009-0090-13",
+                "0009-0094-01",
+                "0009-0094-03",
+                "59762-0057-1",
+                "59762-0059-1",
+                "59762-0066-1",
+                "59762-0068-1",
+                "0054-3068-44",
+                "0781-1061-01",
+                "0781-1061-05",
+                "0781-1061-10",
+                "0781-1077-01",
+                "0781-1077-05",
+                "0781-1077-10",
+                "0781-1079-01",
+                "0781-1079-05",
+                "0781-1079-10",
+                "0781-1089-01",
+                "0781-1089-05"
+              ],
+              "nui": [
+                "N0000175694",
+                "M0002356"
+              ],
+              "pharm_class_epc": [
+                "Benzodiazepine [EPC]"
+              ],
+              "pharm_class_cs": [
+                "Benzodiazepines [CS]"
+              ],
+              "unii": [
+                "YU55MQ3IZY"
+              ]
+            }
+          },
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "FENTANYL",
+            "drugdosagetext": "UNK UNKNOWN, UNKNOWN",
+            "drugdosageform": "Unknown",
+            "drugadministrationroute": "065",
+            "drugindication": "Product used for unknown indication",
+            "actiondrug": "6",
+            "drugadditional": "4",
+            "activesubstance": {
+              "activesubstancename": "FENTANYL\\FENTANYL CITRATE"
+            },
+            "openfda": {
+              "application_number": [
+                "ANDA077449",
+                "ANDA202097",
+                "ANDA076258"
+              ],
+              "brand_name": [
+                "FENTANYL",
+                "FENTANYL SYSTEM"
+              ],
+              "generic_name": [
+                "FENTANYL"
+              ],
+              "manufacturer_name": [
+                "Aveva Drug Delivery Systems Inc.",
+                "INGENUS PHARMACEUTICALS, LLC",
+                "ALVOGEN",
+                "Mylan Pharmaceuticals Inc."
+              ],
+              "product_ndc": [
+                "3215-7701",
+                "3215-7702",
+                "3215-7703",
+                "3215-7704",
+                "3215-7705",
+                "3215-7706",
+                "3215-7707",
+                "3215-7708",
+                "50742-549",
+                "50742-550",
+                "50742-551",
+                "50742-552",
+                "50742-553",
+                "50742-554",
+                "50742-555",
+                "50742-556",
+                "47781-423",
+                "47781-424",
+                "47781-426",
+                "47781-427",
+                "47781-428",
+                "0378-9119",
+                "0378-9121",
+                "0378-9125",
+                "0378-9122",
+                "0378-9126",
+                "0378-9123",
+                "0378-9127",
+                "0378-9124"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "TRANSDERMAL"
+              ],
+              "substance_name": [
+                "FENTANYL"
+              ],
+              "rxcui": [
+                "197696",
+                "245134",
+                "245135",
+                "245136",
+                "577057",
+                "1603495",
+                "1603498",
+                "1603501"
+              ],
+              "spl_id": [
+                "4edfc77d-dee4-611b-e063-6294a90a47f8",
+                "4edfd739-fc61-0f08-e063-6394a90ae646",
+                "4b8493ea-0ce4-6949-e063-6294a90a8861",
+                "a6e21c86-57e5-4be5-b1bb-c894893991b2"
+              ],
+              "spl_set_id": [
+                "73897c38-e4ec-40bc-9f41-3359ee23a5a8",
+                "bf02ffd0-cc5d-446b-b648-378f6885052f",
+                "242759ef-cb6d-4e3e-9f8d-5e31efa1f289",
+                "2a2238e9-4b5d-c56d-8663-dd354ff9ae0c"
+              ],
+              "package_ndc": [
+                "3215-7701-01",
+                "3215-7701-05",
+                "3215-7702-01",
+                "3215-7702-05",
+                "3215-7703-01",
+                "3215-7703-05",
+                "3215-7704-01",
+                "3215-7704-05",
+                "3215-7705-01",
+                "3215-7705-05",
+                "3215-7706-01",
+                "3215-7706-05",
+                "3215-7707-01",
+                "3215-7707-05",
+                "3215-7708-01",
+                "3215-7708-05",
+                "50742-549-01",
+                "50742-549-05",
+                "50742-550-01",
+                "50742-550-05",
+                "50742-551-01",
+                "50742-551-05",
+                "50742-552-01",
+                "50742-552-05",
+                "50742-553-01",
+                "50742-553-05",
+                "50742-554-01",
+                "50742-554-05",
+                "50742-555-01",
+                "50742-555-05",
+                "50742-556-01",
+                "50742-556-05",
+                "47781-423-11",
+                "47781-423-47",
+                "47781-424-11",
+                "47781-424-47",
+                "47781-426-11",
+                "47781-426-47",
+                "47781-427-11",
+                "47781-427-47",
+                "47781-428-11",
+                "47781-428-47",
+                "0378-9119-16",
+                "0378-9119-98",
+                "0378-9121-16",
+                "0378-9121-98",
+                "0378-9125-16",
+                "0378-9125-98",
+                "0378-9122-16",
+                "0378-9122-98",
+                "0378-9126-16",
+                "0378-9126-98",
+                "0378-9123-16",
+                "0378-9123-98",
+                "0378-9127-16",
+                "0378-9127-98",
+                "0378-9124-16",
+                "0378-9124-98"
+              ],
+              "nui": [
+                "N0000175684",
+                "N0000175690"
+              ],
+              "pharm_class_moa": [
+                "Full Opioid Agonists [MoA]"
+              ],
+              "pharm_class_epc": [
+                "Opioid Agonist [EPC]"
+              ],
+              "unii": [
+                "UF599785JZ"
+              ]
+            }
+          },
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "COCAINE",
+            "drugdosagetext": "UNK UNKNOWN, UNKNOWN",
+            "drugdosageform": "Unknown",
+            "drugadministrationroute": "065",
+            "drugindication": "Product used for unknown indication",
+            "actiondrug": "6",
+            "drugadditional": "4",
+            "activesubstance": {
+              "activesubstancename": "COCAINE"
+            }
+          }
+        ],
+        "summary": {
+          "narrativeincludeclinical": "CASE EVENT DATE: 20220101"
+        }
+      }
+    },
+    {
+      "safetyreportversion": "1",
+      "safetyreportid": "23487451",
+      "primarysourcecountry": "IT",
+      "occurcountry": "IT",
+      "transmissiondateformat": "102",
+      "transmissiondate": "20240410",
+      "reporttype": "2",
+      "serious": "1",
+      "seriousnessdeath": "2",
+      "seriousnesslifethreatening": "2",
+      "seriousnesshospitalization": "2",
+      "seriousnessdisabling": "2",
+      "seriousnesscongenitalanomali": "2",
+      "seriousnessother": "1",
+      "receivedateformat": "102",
+      "receivedate": "20240206",
+      "receiptdateformat": "102",
+      "receiptdate": "20240206",
+      "fulfillexpeditecriteria": "1",
+      "authoritynumb": "IT-MINISAL02-966057",
+      "primarysource": {
+        "reportercountry": "IT",
+        "qualification": "2"
+      },
+      "sender": {
+        "sendertype": "2",
+        "senderorganization": "FDA-Public Use"
+      },
+      "receiver": {
+        "receivertype": "6",
+        "receiverorganization": "FDA"
+      },
+      "patient": {
+        "patientonsetage": "17",
+        "patientonsetageunit": "801",
+        "patientsex": "2",
+        "reaction": [
+          {
+            "reactionmeddraversionpt": "26.1",
+            "reactionmeddrapt": "Loss of consciousness",
+            "reactionoutcome": "1"
+          },
+          {
+            "reactionmeddraversionpt": "26.1",
+            "reactionmeddrapt": "Drug abuse",
+            "reactionoutcome": "6"
+          }
+        ],
+        "drug": [
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "ZOLOFT",
+            "drugauthorizationnumb": "019839",
+            "drugstructuredosagenumb": "800",
+            "drugstructuredosageunit": "003",
+            "drugcumulativedosagenumb": "800",
+            "drugcumulativedosageunit": "003",
+            "drugdosagetext": "800 MILLIGRAM (16 TABLETS 50 MILLIGRAM)",
+            "drugdosageform": "Film-coated tablet",
+            "drugadministrationroute": "048",
+            "drugindication": "Product used for unknown indication",
+            "drugstartdateformat": "102",
+            "drugstartdate": "20240110",
+            "drugenddateformat": "102",
+            "drugenddate": "20240110",
+            "drugtreatmentduration": "1",
+            "drugtreatmentdurationunit": "804",
+            "actiondrug": "1",
+            "drugrecurreadministration": "3",
+            "drugadditional": "1",
+            "activesubstance": {
+              "activesubstancename": "SERTRALINE HYDROCHLORIDE"
+            },
+            "openfda": {
+              "application_number": [
+                "NDA019839",
+                "NDA020990"
+              ],
+              "brand_name": [
+                "ZOLOFT"
+              ],
+              "generic_name": [
+                "SERTRALINE HYDROCHLORIDE"
+              ],
+              "manufacturer_name": [
+                "Viatris Specialty LLC"
+              ],
+              "product_ndc": [
+                "58151-574",
+                "58151-575",
+                "58151-576",
+                "58151-601"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "ORAL"
+              ],
+              "substance_name": [
+                "SERTRALINE HYDROCHLORIDE"
+              ],
+              "rxcui": [
+                "208149",
+                "208161",
+                "212233",
+                "312938",
+                "312940",
+                "312941",
+                "861064",
+                "861066"
+              ],
+              "spl_id": [
+                "fd27d2f5-1ade-4dbf-b2d2-bb98daf7da3a"
+              ],
+              "spl_set_id": [
+                "fda754f6-d0f3-4dce-a17a-927d64f912f7"
+              ],
+              "package_ndc": [
+                "58151-574-93",
+                "58151-575-32",
+                "58151-575-88",
+                "58151-575-93",
+                "58151-576-32",
+                "58151-576-88",
+                "58151-576-93",
+                "58151-601-35"
+              ],
+              "unii": [
+                "UTI8907Y6X"
+              ]
+            }
+          },
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "XANAX",
+            "drugauthorizationnumb": "018276",
+            "drugstructuredosagenumb": "14.5",
+            "drugstructuredosageunit": "003",
+            "drugcumulativedosagenumb": "14.5",
+            "drugcumulativedosageunit": "003",
+            "drugdosagetext": "14.5 MILLIGRAM (29 TABLETS 0,5 MGXANAX 0,5 MG PROLONGED RELEASE)",
+            "drugdosageform": "Modified-release tablet",
+            "drugadministrationroute": "048",
+            "drugindication": "Product used for unknown indication",
+            "drugstartdateformat": "102",
+            "drugstartdate": "20240110",
+            "drugenddateformat": "102",
+            "drugenddate": "20240110",
+            "drugtreatmentduration": "1",
+            "drugtreatmentdurationunit": "804",
+            "actiondrug": "1",
+            "drugrecurreadministration": "3",
+            "drugadditional": "1",
+            "activesubstance": {
+              "activesubstancename": "ALPRAZOLAM"
+            },
+            "openfda": {
+              "application_number": [
+                "NDA018276"
+              ],
+              "brand_name": [
+                "XANAX"
+              ],
+              "generic_name": [
+                "ALPRAZOLAM"
+              ],
+              "manufacturer_name": [
+                "PHARMACIA & UPJOHN COMPANY LLC"
+              ],
+              "product_ndc": [
+                "0009-0029",
+                "0009-0055",
+                "0009-0090",
+                "0009-0094"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "ORAL"
+              ],
+              "substance_name": [
+                "ALPRAZOLAM"
+              ],
+              "rxcui": [
+                "141927",
+                "141928",
+                "197321",
+                "197322",
+                "214003",
+                "214004",
+                "308047",
+                "308048"
+              ],
+              "spl_id": [
+                "f5323eac-81d0-4096-ac15-2f25220c5c28"
+              ],
+              "spl_set_id": [
+                "388e249d-b9b6-44c3-9f8f-880eced0239f"
+              ],
+              "package_ndc": [
+                "0009-0029-01",
+                "0009-0029-46",
+                "0009-0029-02",
+                "0009-0029-14",
+                "0009-0055-01",
+                "0009-0055-46",
+                "0009-0055-03",
+                "0009-0055-15",
+                "0009-0090-01",
+                "0009-0090-04",
+                "0009-0090-13",
+                "0009-0094-01",
+                "0009-0094-03"
+              ],
+              "nui": [
+                "N0000175694",
+                "M0002356"
+              ],
+              "pharm_class_epc": [
+                "Benzodiazepine [EPC]"
+              ],
+              "pharm_class_cs": [
+                "Benzodiazepines [CS]"
+              ],
+              "unii": [
+                "YU55MQ3IZY"
+              ]
+            }
+          },
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "SEROQUEL",
+            "drugstructuredosagenumb": "300",
+            "drugstructuredosageunit": "003",
+            "drugcumulativedosagenumb": "300",
+            "drugcumulativedosageunit": "003",
+            "drugdosagetext": "300 MILLIGRAM (12 TABLETS 25 MG)",
+            "drugdosageform": "Prolonged-release tablet",
+            "drugadministrationroute": "048",
+            "drugindication": "Product used for unknown indication",
+            "drugstartdateformat": "102",
+            "drugstartdate": "20240110",
+            "drugenddateformat": "102",
+            "drugenddate": "20240110",
+            "drugtreatmentduration": "1",
+            "drugtreatmentdurationunit": "804",
+            "actiondrug": "1",
+            "drugrecurreadministration": "3",
+            "drugadditional": "1",
+            "activesubstance": {
+              "activesubstancename": "QUETIAPINE FUMARATE"
+            },
+            "openfda": {
+              "application_number": [
+                "NDA022047",
+                "NDA020639"
+              ],
+              "brand_name": [
+                "SEROQUEL XR",
+                "SEROQUEL"
+              ],
+              "generic_name": [
+                "QUETIAPINE"
+              ],
+              "manufacturer_name": [
+                "AstraZeneca Pharmaceuticals LP",
+                "H2-Pharma, LLC"
+              ],
+              "product_ndc": [
+                "0310-0281",
+                "0310-0282",
+                "0310-0283",
+                "0310-0284",
+                "0310-0280",
+                "61269-250",
+                "61269-251",
+                "61269-252",
+                "61269-253",
+                "61269-254",
+                "61269-255",
+                "0310-0271",
+                "0310-0275",
+                "0310-0278",
+                "0310-0272",
+                "0310-0274",
+                "0310-0279",
+                "61269-270",
+                "61269-272",
+                "61269-273",
+                "61269-274",
+                "61269-271"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "ORAL"
+              ],
+              "substance_name": [
+                "QUETIAPINE FUMARATE"
+              ],
+              "rxcui": [
+                "721791",
+                "721793",
+                "721794",
+                "721795",
+                "721796",
+                "721797",
+                "853201",
+                "853202",
+                "895670",
+                "895671",
+                "153638",
+                "153639",
+                "153640",
+                "284509",
+                "312743",
+                "312744",
+                "312745",
+                "317174",
+                "616483",
+                "616485",
+                "616487",
+                "616489"
+              ],
+              "spl_id": [
+                "8e78eabf-6ff9-409b-ba1b-d9cb8d4f3fe0",
+                "1fc7d584-a2f0-47f7-9506-5ecb2bfebb65",
+                "aef69992-4a20-4d55-b85c-7c0799619ce6",
+                "30d64c02-e070-43b8-9c96-3f7b112c5f7c"
+              ],
+              "spl_set_id": [
+                "473a3ac4-67f4-4782-baa9-7f9bdd8761f4",
+                "8ae62aaf-f8c5-417f-baac-0098369ca322",
+                "0584dda8-bc3c-48fe-1a90-79608f78e8a0",
+                "ab959a35-d0ba-4f18-8f2e-6619d88b16e3"
+              ],
+              "package_ndc": [
+                "0310-0282-39",
+                "0310-0282-94",
+                "0310-0282-60",
+                "0310-0283-39",
+                "0310-0283-55",
+                "0310-0283-60",
+                "0310-0283-94",
+                "0310-0284-39",
+                "0310-0284-60",
+                "0310-0284-94",
+                "0310-0280-60",
+                "0310-0280-39",
+                "0310-0280-94",
+                "0310-0281-39",
+                "0310-0281-60",
+                "61269-250-10",
+                "61269-251-10",
+                "61269-252-10",
+                "61269-253-10",
+                "61269-254-60",
+                "61269-255-10",
+                "0310-0275-10",
+                "0310-0275-34",
+                "0310-0275-39",
+                "0310-0278-10",
+                "0310-0278-34",
+                "0310-0278-39",
+                "0310-0271-10",
+                "0310-0271-39",
+                "0310-0272-10",
+                "0310-0272-39",
+                "0310-0274-60",
+                "0310-0274-39",
+                "0310-0279-10",
+                "0310-0279-39",
+                "61269-272-60",
+                "61269-273-60",
+                "61269-274-60",
+                "61269-270-60",
+                "61269-271-60"
+              ],
+              "unii": [
+                "2S3PL1B6UJ"
+              ]
+            }
+          }
+        ],
+        "summary": {
+          "narrativeincludeclinical": "CASE EVENT DATE: 20240110"
+        }
+      }
+    },
+    {
+      "safetyreportversion": "2",
+      "safetyreportid": "23293949",
+      "primarysourcecountry": "IT",
+      "occurcountry": "IT",
+      "transmissiondateformat": "102",
+      "transmissiondate": "20240410",
+      "reporttype": "2",
+      "serious": "1",
+      "seriousnessdeath": "2",
+      "seriousnesslifethreatening": "2",
+      "seriousnesshospitalization": "2",
+      "seriousnessdisabling": "2",
+      "seriousnesscongenitalanomali": "2",
+      "seriousnessother": "1",
+      "receivedateformat": "102",
+      "receivedate": "20231213",
+      "receiptdateformat": "102",
+      "receiptdate": "20240105",
+      "fulfillexpeditecriteria": "1",
+      "authoritynumb": "IT-MINISAL02-956661",
+      "primarysource": {
+        "reportercountry": "IT",
+        "qualification": "1"
+      },
+      "sender": {
+        "sendertype": "2",
+        "senderorganization": "FDA-Public Use"
+      },
+      "receiver": {
+        "receivertype": "6",
+        "receiverorganization": "FDA"
+      },
+      "patient": {
+        "patientonsetage": "54",
+        "patientonsetageunit": "801",
+        "patientsex": "2",
+        "reaction": [
+          {
+            "reactionmeddraversionpt": "26.1",
+            "reactionmeddrapt": "Sopor",
+            "reactionoutcome": "1"
+          },
+          {
+            "reactionmeddraversionpt": "26.1",
+            "reactionmeddrapt": "Drug abuse",
+            "reactionoutcome": "1"
+          }
+        ],
+        "drug": [
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "XANAX",
+            "drugauthorizationnumb": "018276",
+            "drugdosagetext": "1 BOTTLE TAKEN FOR SELF-HARM PURPOSES",
+            "drugdosageform": "Unknown",
+            "drugadministrationroute": "048",
+            "drugindication": "Product used for unknown indication",
+            "drugstartdateformat": "102",
+            "drugstartdate": "20231021",
+            "drugenddateformat": "102",
+            "drugenddate": "20231021",
+            "drugtreatmentduration": "1",
+            "drugtreatmentdurationunit": "804",
+            "actiondrug": "1",
+            "drugrecurreadministration": "3",
+            "drugadditional": "1",
+            "activesubstance": {
+              "activesubstancename": "ALPRAZOLAM"
+            },
+            "openfda": {
+              "application_number": [
+                "NDA018276"
+              ],
+              "brand_name": [
+                "XANAX"
+              ],
+              "generic_name": [
+                "ALPRAZOLAM"
+              ],
+              "manufacturer_name": [
+                "PHARMACIA & UPJOHN COMPANY LLC"
+              ],
+              "product_ndc": [
+                "0009-0029",
+                "0009-0055",
+                "0009-0090",
+                "0009-0094"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "ORAL"
+              ],
+              "substance_name": [
+                "ALPRAZOLAM"
+              ],
+              "rxcui": [
+                "141927",
+                "141928",
+                "197321",
+                "197322",
+                "214003",
+                "214004",
+                "308047",
+                "308048"
+              ],
+              "spl_id": [
+                "f5323eac-81d0-4096-ac15-2f25220c5c28"
+              ],
+              "spl_set_id": [
+                "388e249d-b9b6-44c3-9f8f-880eced0239f"
+              ],
+              "package_ndc": [
+                "0009-0029-01",
+                "0009-0029-46",
+                "0009-0029-02",
+                "0009-0029-14",
+                "0009-0055-01",
+                "0009-0055-46",
+                "0009-0055-03",
+                "0009-0055-15",
+                "0009-0090-01",
+                "0009-0090-04",
+                "0009-0090-13",
+                "0009-0094-01",
+                "0009-0094-03"
+              ],
+              "nui": [
+                "N0000175694",
+                "M0002356"
+              ],
+              "pharm_class_epc": [
+                "Benzodiazepine [EPC]"
+              ],
+              "pharm_class_cs": [
+                "Benzodiazepines [CS]"
+              ],
+              "unii": [
+                "YU55MQ3IZY"
+              ]
+            }
+          },
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "VENLAFAXINE",
+            "drugauthorizationnumb": "020699",
+            "drugstructuredosagenumb": "119",
+            "drugstructuredosageunit": "032",
+            "drugdosagetext": "119 DOSAGE FORM (119 TABLETS OF 75 MG SLOW RELEASE)",
+            "drugdosageform": "Tablet",
+            "drugadministrationroute": "048",
+            "drugindication": "Product used for unknown indication",
+            "drugstartdateformat": "102",
+            "drugstartdate": "20231021",
+            "drugenddateformat": "102",
+            "drugenddate": "20231021",
+            "drugtreatmentduration": "1",
+            "drugtreatmentdurationunit": "804",
+            "actiondrug": "1",
+            "drugrecurreadministration": "3",
+            "drugadditional": "1",
+            "activesubstance": {
+              "activesubstancename": "VENLAFAXINE HYDROCHLORIDE"
+            },
+            "openfda": {
+              "application_number": [
+                "ANDA215622",
+                "ANDA211323",
+                "ANDA206250",
+                "ANDA078627",
+                "ANDA078932",
+                "ANDA090555",
+                "ANDA078554",
+                "ANDA214127",
+                "ANDA077653",
+                "ANDA214609",
+                "ANDA214419",
+                "ANDA216044",
+                "ANDA214691"
+              ],
+              "brand_name": [
+                "VENLAFAXINE",
+                "VENLAFAXINE HYDROCHLORIDE"
+              ],
+              "generic_name": [
+                "VENLAFAXINE",
+                "VENLAFAXINE HYDROCHLORIDE"
+              ],
+              "manufacturer_name": [
+                "Zydus Lifesciences Limited",
+                "Modavar Pharmaceuticals LLC",
+                "Cadila Pharmaceuticals Limited",
+                "Sun Pharmaceutical Industries, Inc.",
+                "Alembic Pharmaceuticals Inc.",
+                "Aurobindo Pharma Limited",
+                "Zydus Pharmaceuticals USA Inc.",
+                "Heritage Pharmaceuticals Inc. d/b/a Avet Pharmaceuticals Inc.",
+                "Rising Pharma Holdings, Inc.",
+                "Ascend Laboratories, LLC",
+                "Alembic Pharmaceuticals Limited",
+                "BluePoint Laboratories",
+                "Dr. Reddy's Laboratories Inc.",
+                "XLCare Pharmaceuticals, Inc.",
+                "Camber Pharmaceuticals, Inc.",
+                "Ajanta Pharma USA Inc."
+              ],
+              "product_ndc": [
+                "70771-1649",
+                "70771-1650",
+                "70771-1651",
+                "70771-1652",
+                "72241-075",
+                "72241-076",
+                "72241-077",
+                "71209-087",
+                "71209-088",
+                "71209-089",
+                "71209-025",
+                "71209-026",
+                "71209-027",
+                "71209-028",
+                "71209-029",
+                "57664-392",
+                "57664-393",
+                "57664-394",
+                "57664-395",
+                "57664-396",
+                "62332-008",
+                "62332-009",
+                "62332-010",
+                "62332-011",
+                "62332-012",
+                "65862-404",
+                "65862-405",
+                "65862-406",
+                "65862-407",
+                "65862-408",
+                "70710-1348",
+                "70710-1349",
+                "70710-1350",
+                "70710-1352",
+                "23155-246",
+                "23155-247",
+                "23155-248",
+                "23155-249",
+                "23155-250",
+                "57237-172",
+                "57237-173",
+                "57237-174",
+                "57237-175",
+                "57237-176",
+                "67877-726",
+                "67877-727",
+                "67877-728",
+                "67877-729",
+                "46708-430",
+                "46708-431",
+                "46708-432",
+                "46708-433",
+                "46708-434",
+                "68001-156",
+                "68001-158",
+                "68001-159",
+                "68001-157",
+                "68001-160",
+                "68382-018",
+                "68382-019",
+                "68382-020",
+                "68382-021",
+                "68382-101",
+                "43598-943",
+                "43598-944",
+                "72865-197",
+                "72865-198",
+                "72865-199",
+                "72865-200",
+                "68001-496",
+                "68001-497",
+                "68001-498",
+                "68001-499",
+                "31722-123",
+                "31722-124",
+                "31722-125",
+                "31722-126",
+                "64980-578",
+                "64980-579",
+                "64980-580",
+                "64980-581",
+                "27241-221",
+                "27241-222",
+                "27241-223",
+                "27241-224"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "ORAL"
+              ],
+              "substance_name": [
+                "VENLAFAXINE HYDROCHLORIDE"
+              ],
+              "rxcui": [
+                "808744",
+                "808748",
+                "808751",
+                "808753",
+                "313580",
+                "313582",
+                "313584",
+                "313586",
+                "314277"
+              ],
+              "spl_id": [
+                "0bf02fa2-e5cd-42d6-ab41-1ecd150b7c57",
+                "14b38374-7287-47dd-8ef9-e88bd5b23a26",
+                "5e8d05f3-2a6f-4132-b7e3-9dc90804f2d3",
+                "f6bcbdd6-db09-4aeb-8eb0-6eadb8ebdeba",
+                "4a916be7-abd4-8771-e063-6394a90a86eb",
+                "8724b94d-b3fd-4844-a7fe-2be7982cf8f5",
+                "426d12db-50e2-4915-999f-84645fb387d9",
+                "479c565e-3c2f-42a1-8a19-b7a210e5f28d",
+                "da564fb4-3f43-4725-b5f2-e5826bfc2170",
+                "4da7fe70-bb28-43f2-97b6-66d130e6c72f",
+                "17943f8a-6ea6-4e86-93cc-df580774a8d9",
+                "47576e3f-2b6d-4334-8733-748687e5b784",
+                "04c5d11d-d249-eb93-e063-6294a90a1b46",
+                "ea404f6c-7e07-4779-a52c-8cffb92718ef",
+                "79d34297-6604-4031-a89a-8ec557d078d1",
+                "2cdc9267-9619-474a-abe4-a0b85ac3fb2d",
+                "2b5c3dc6-9055-abe9-e063-6294a90af76e",
+                "495259b8-9f81-4b6e-aa51-d199aa0edfb8",
+                "7f187899-ddc6-4e15-b2af-e54f59d5baf4",
+                "a85661b9-217a-41ca-90d8-d1e29052e44d"
+              ],
+              "spl_set_id": [
+                "750333ce-a512-42e1-b9e3-179714b488df",
+                "14b38374-7287-47dd-8ef9-e88bd5b23a26",
+                "516e7566-35c2-4a25-88d8-54d9dbc8f6be",
+                "2ed61dcf-42e3-47cf-a607-459eef5fea98",
+                "55889b3d-74c9-4638-9a14-6a4ca3a99f7f",
+                "67b323a7-a8c9-410f-bff0-0e515bef41a7",
+                "b23637e5-d37f-41b5-ba76-fc053e903bc2",
+                "db1d16b3-d1a2-4f41-adff-a87c17689aa0",
+                "80ac757d-c629-4579-8afd-cae0ee9cd614",
+                "20319949-ccf9-477a-a6e3-53502772deb9",
+                "528d5392-4ad5-48c5-963d-6ebfb9187db4",
+                "b73da6e2-1494-436f-a204-2e4e4c5974b6",
+                "172b3d3d-bdae-47bf-8fba-edd6da1a8649",
+                "72efad5f-0909-46a5-aa13-ac24fe015fe6",
+                "9312f4df-63d9-4167-880f-36a816870442",
+                "68f40801-d35e-464e-ac94-21016b617ea2",
+                "5efe1336-c796-4560-8110-a64c80eefb0c",
+                "8c4ccc5c-f6a2-4ce3-8866-9e6b32b08fd3",
+                "074f4478-e81b-45a2-ae85-ffd27bed940f",
+                "22d4817c-1f19-4490-8a38-d8904f0374f7"
+              ],
+              "package_ndc": [
+                "70771-1649-3",
+                "70771-1649-9",
+                "70771-1649-1",
+                "70771-1650-3",
+                "70771-1650-9",
+                "70771-1650-1",
+                "70771-1651-3",
+                "70771-1651-9",
+                "70771-1651-1",
+                "70771-1652-3",
+                "70771-1652-9",
+                "70771-1652-1",
+                "72241-075-22",
+                "72241-075-04",
+                "72241-075-11",
+                "72241-076-22",
+                "72241-076-04",
+                "72241-076-11",
+                "72241-077-22",
+                "72241-077-04",
+                "72241-077-11",
+                "71209-087-01",
+                "71209-087-04",
+                "71209-087-11",
+                "71209-088-01",
+                "71209-088-04",
+                "71209-088-11",
+                "71209-089-01",
+                "71209-089-04",
+                "71209-089-11",
+                "71209-025-05",
+                "71209-026-05",
+                "71209-027-05",
+                "71209-028-05",
+                "71209-029-05",
+                "57664-392-88",
+                "57664-393-88",
+                "57664-394-88",
+                "57664-395-88",
+                "57664-396-88",
+                "62332-008-30",
+                "62332-008-31",
+                "62332-008-91",
+                "62332-009-30",
+                "62332-009-31",
+                "62332-009-91",
+                "62332-010-30",
+                "62332-010-31",
+                "62332-010-91",
+                "62332-011-30",
+                "62332-011-31",
+                "62332-011-91",
+                "62332-012-30",
+                "62332-012-31",
+                "62332-012-91",
+                "65862-404-30",
+                "65862-404-60",
+                "65862-404-90",
+                "65862-404-01",
+                "65862-404-99",
+                "65862-404-71",
+                "65862-404-10",
+                "65862-405-30",
+                "65862-405-60",
+                "65862-405-90",
+                "65862-405-01",
+                "65862-405-99",
+                "65862-405-66",
+                "65862-405-10",
+                "65862-406-30",
+                "65862-406-90",
+                "65862-406-01",
+                "65862-406-99",
+                "65862-406-59",
+                "65862-406-10",
+                "65862-407-30",
+                "65862-407-90",
+                "65862-407-01",
+                "65862-407-99",
+                "65862-407-71",
+                "65862-407-10",
+                "65862-408-20",
+                "65862-408-90",
+                "65862-408-01",
+                "65862-408-99",
+                "65862-408-66",
+                "65862-408-10",
+                "70710-1348-1",
+                "70710-1348-3",
+                "70710-1348-9",
+                "70710-1349-3",
+                "70710-1349-9",
+                "70710-1349-1",
+                "70710-1350-3",
+                "70710-1350-9",
+                "70710-1350-1",
+                "70710-1352-3",
+                "70710-1352-9",
+                "70710-1352-1",
+                "23155-246-09",
+                "23155-246-01",
+                "23155-247-09",
+                "23155-247-01",
+                "23155-248-09",
+                "23155-248-01",
+                "23155-249-09",
+                "23155-249-01",
+                "23155-250-09",
+                "23155-250-01",
+                "57237-172-90",
+                "57237-172-01",
+                "57237-173-90",
+                "57237-173-01",
+                "57237-174-90",
+                "57237-174-01",
+                "57237-175-90",
+                "57237-175-01",
+                "57237-176-90",
+                "57237-176-01",
+                "67877-726-30",
+                "67877-726-90",
+                "67877-727-30",
+                "67877-727-90",
+                "67877-728-30",
+                "67877-728-90",
+                "67877-729-30",
+                "67877-729-90",
+                "46708-430-30",
+                "46708-430-31",
+                "46708-430-91",
+                "46708-431-30",
+                "46708-431-31",
+                "46708-431-91",
+                "46708-432-30",
+                "46708-432-31",
+                "46708-432-91",
+                "46708-433-30",
+                "46708-433-31",
+                "46708-433-91",
+                "46708-434-30",
+                "46708-434-31",
+                "46708-434-91",
+                "68001-158-00",
+                "68001-159-00",
+                "68001-157-00",
+                "68001-160-00",
+                "68001-156-00",
+                "68382-018-06",
+                "68382-018-14",
+                "68382-018-16",
+                "68382-018-01",
+                "68382-018-05",
+                "68382-018-10",
+                "68382-019-06",
+                "68382-019-14",
+                "68382-019-16",
+                "68382-019-01",
+                "68382-019-05",
+                "68382-019-10",
+                "68382-020-06",
+                "68382-020-14",
+                "68382-020-16",
+                "68382-020-01",
+                "68382-020-05",
+                "68382-020-10",
+                "68382-021-06",
+                "68382-021-14",
+                "68382-021-16",
+                "68382-021-01",
+                "68382-021-05",
+                "68382-021-10",
+                "68382-101-06",
+                "68382-101-14",
+                "68382-101-16",
+                "68382-101-01",
+                "68382-101-05",
+                "68382-101-10",
+                "43598-943-30",
+                "43598-943-90",
+                "43598-944-30",
+                "43598-944-90",
+                "72865-197-30",
+                "72865-197-90",
+                "72865-198-30",
+                "72865-198-90",
+                "72865-199-30",
+                "72865-199-90",
+                "72865-200-30",
+                "72865-200-90",
+                "68001-496-04",
+                "68001-496-05",
+                "68001-497-04",
+                "68001-497-05",
+                "68001-498-04",
+                "68001-498-05",
+                "68001-499-04",
+                "68001-499-05",
+                "31722-123-30",
+                "31722-123-90",
+                "31722-124-30",
+                "31722-124-90",
+                "31722-125-30",
+                "31722-125-90",
+                "31722-126-30",
+                "31722-126-90",
+                "64980-578-03",
+                "64980-578-09",
+                "64980-579-03",
+                "64980-579-09",
+                "64980-580-03",
+                "64980-580-09",
+                "64980-581-03",
+                "64980-581-09",
+                "27241-221-30",
+                "27241-221-90",
+                "27241-222-30",
+                "27241-222-90",
+                "27241-223-30",
+                "27241-223-90",
+                "27241-224-30",
+                "27241-224-90"
+              ],
+              "unii": [
+                "7D7RX5A8MO"
+              ]
+            }
+          }
+        ],
+        "summary": {
+          "narrativeincludeclinical": "CASE EVENT DATE: 20231022"
+        }
+      }
+    },
+    {
+      "safetyreportversion": "1",
+      "safetyreportid": "23592265",
+      "primarysourcecountry": "FR",
+      "occurcountry": "FR",
+      "transmissiondateformat": "102",
+      "transmissiondate": "20240410",
+      "reporttype": "1",
+      "serious": "1",
+      "seriousnessdeath": "2",
+      "seriousnesslifethreatening": "2",
+      "seriousnesshospitalization": "1",
+      "seriousnessdisabling": "2",
+      "seriousnesscongenitalanomali": "2",
+      "seriousnessother": "2",
+      "receivedateformat": "102",
+      "receivedate": "20240304",
+      "receiptdateformat": "102",
+      "receiptdate": "20240304",
+      "fulfillexpeditecriteria": "1",
+      "authoritynumb": "FR-AFSSAPS-AVCF2024000016",
+      "duplicate": "1",
+      "reportduplicate": {
+        "duplicatesource": "AFSSAPS",
+        "duplicatenumb": "FR-AFSSAPS-AVCF2024000016"
+      },
+      "primarysource": {
+        "reportercountry": "FR",
+        "qualification": "1"
+      },
+      "sender": {
+        "sendertype": "2",
+        "senderorganization": "FDA-Public Use"
+      },
+      "receiver": {
+        "receivertype": "6",
+        "receiverorganization": "FDA"
+      },
+      "patient": {
+        "patientonsetage": "19",
+        "patientonsetageunit": "801",
+        "patientsex": "2",
+        "reaction": [
+          {
+            "reactionmeddraversionpt": "26.1",
+            "reactionmeddrapt": "Somnolence",
+            "reactionoutcome": "1"
+          },
+          {
+            "reactionmeddraversionpt": "26.1",
+            "reactionmeddrapt": "Intentional product misuse",
+            "reactionoutcome": "1"
+          }
+        ],
+        "drug": [
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "ALPRAZOLAM",
+            "drugbatchnumb": "unknown",
+            "drugauthorizationnumb": "074342",
+            "drugseparatedosagenumb": "1",
+            "drugadministrationroute": "048",
+            "drugindication": "Product used for unknown indication",
+            "drugstartdateformat": "102",
+            "drugstartdate": "20230601",
+            "actiondrug": "5",
+            "drugrecurreadministration": "3",
+            "drugadditional": "3",
+            "activesubstance": {
+              "activesubstancename": "ALPRAZOLAM"
+            },
+            "openfda": {
+              "application_number": [
+                "ANDA074342",
+                "ANDA203346",
+                "ANDA090871",
+                "NDA018276",
+                "ANDA074174",
+                "ANDA078088",
+                "ANDA078561",
+                "ANDA078387",
+                "ANDA200739",
+                "NDA021434",
+                "ANDA074312",
+                "ANDA074112",
+                "ANDA074909"
+              ],
+              "brand_name": [
+                "ALPRAZOLAM",
+                "XANAX",
+                "ALPRAZOLAM XR"
+              ],
+              "generic_name": [
+                "ALPRAZOLAM"
+              ],
+              "manufacturer_name": [
+                "Actavis Pharma, Inc.",
+                "Aurobindo Pharma Limited",
+                "Mylan Pharmaceuticals Inc.",
+                "ANI Pharmaceuticals, Inc.",
+                "Par Health USA, LLC",
+                "Amneal Pharmaceuticals LLC",
+                "Natco Pharma USA LLC",
+                "PHARMACIA & UPJOHN COMPANY LLC",
+                "Hikma Pharmaceuticals USA Inc.",
+                "Sandoz Inc"
+              ],
+              "product_ndc": [
+                "0228-2027",
+                "0228-2029",
+                "0228-2031",
+                "0228-2039",
+                "65862-676",
+                "65862-677",
+                "65862-678",
+                "65862-679",
+                "65862-454",
+                "65862-455",
+                "65862-456",
+                "65862-457",
+                "59762-3719",
+                "59762-3720",
+                "59762-3721",
+                "59762-3722",
+                "70954-508",
+                "70954-509",
+                "70954-510",
+                "70954-511",
+                "49884-110",
+                "49884-111",
+                "49884-213",
+                "49884-214",
+                "0228-4019",
+                "0228-4022",
+                "0228-4024",
+                "0228-4025",
+                "65162-809",
+                "65162-810",
+                "65162-812",
+                "65162-813",
+                "69339-199",
+                "69339-200",
+                "69339-201",
+                "69339-202",
+                "0009-0029",
+                "0009-0055",
+                "0009-0090",
+                "0009-0094",
+                "59762-0057",
+                "59762-0059",
+                "59762-0066",
+                "59762-0068",
+                "0054-3068",
+                "0781-1061",
+                "0781-1077",
+                "0781-1079",
+                "0781-1089"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "ORAL"
+              ],
+              "substance_name": [
+                "ALPRAZOLAM"
+              ],
+              "rxcui": [
+                "197321",
+                "197322",
+                "308047",
+                "308048",
+                "433798",
+                "433799",
+                "433800",
+                "433801",
+                "485413",
+                "485414",
+                "485415",
+                "485416",
+                "141927",
+                "141928",
+                "214003",
+                "214004",
+                "308050"
+              ],
+              "spl_id": [
+                "08d09d46-386d-4dc8-a0c1-5711261c6282",
+                "7527aeb7-8912-404d-afb7-8c692c84422b",
+                "f2273fea-bd3b-4ef5-b698-73ba677722e3",
+                "0deddc26-2764-4879-a0e4-a29fff246244",
+                "18a6f29f-7eb8-4aa2-8121-d554c59da191",
+                "38e94d5e-f7e2-4349-94f2-2fba605f5ae6",
+                "38c5b407-25a1-48f5-960e-87ef637b644c",
+                "4b2e21bc-ca1c-4ff5-a996-32f1e94d2a91",
+                "885d0fec-f1a6-42f4-8617-1d048cb15ee9",
+                "f5323eac-81d0-4096-ac15-2f25220c5c28",
+                "70f0098e-50b5-4e61-b4e0-141a55d92267",
+                "d7b8cdff-1337-4ef6-a5fb-654f1d655bfe",
+                "4c8c7366-aa3b-4124-9d64-67fb0ead6e15"
+              ],
+              "spl_set_id": [
+                "a23063c0-099a-4256-b95f-3a857bbf704b",
+                "d2fd0b3e-9b78-44d0-82a6-96d6c6238750",
+                "326fa31a-5420-429b-9f7f-170cb38f64bd",
+                "13930c94-d83a-414f-be35-b1fef35f738d",
+                "38428a1b-718c-49cc-94ae-2e3644ba6256",
+                "ff1630b4-2044-433c-96bc-0bb4ae8d42a0",
+                "5ceed721-2e65-4c81-bd84-f110b1ac9d2e",
+                "259387c1-e374-4bc2-9510-5f7f2c60d1a5",
+                "b3c55877-2538-4892-bdb1-d618c643d29c",
+                "388e249d-b9b6-44c3-9f8f-880eced0239f",
+                "1338d1c9-7c75-42ed-95f3-9eb1b6fc51d3",
+                "b945ac6f-796e-41ef-85e9-61007e4a4e9a",
+                "d9b0e228-17cf-40d7-b62e-5050311c571c"
+              ],
+              "package_ndc": [
+                "0228-2027-10",
+                "0228-2027-50",
+                "0228-2027-96",
+                "0228-2029-10",
+                "0228-2029-50",
+                "0228-2029-96",
+                "0228-2031-10",
+                "0228-2031-50",
+                "0228-2031-96",
+                "0228-2039-10",
+                "65862-676-01",
+                "65862-676-05",
+                "65862-676-99",
+                "65862-677-01",
+                "65862-677-05",
+                "65862-677-99",
+                "65862-678-01",
+                "65862-678-05",
+                "65862-678-99",
+                "65862-679-01",
+                "65862-679-05",
+                "65862-679-99",
+                "65862-454-60",
+                "65862-454-99",
+                "65862-454-71",
+                "65862-455-60",
+                "65862-455-99",
+                "65862-455-71",
+                "65862-456-60",
+                "65862-456-99",
+                "65862-456-71",
+                "65862-457-60",
+                "65862-457-99",
+                "65862-457-71",
+                "59762-3719-1",
+                "59762-3719-3",
+                "59762-3719-4",
+                "59762-3720-1",
+                "59762-3720-3",
+                "59762-3720-4",
+                "59762-3721-1",
+                "59762-3721-3",
+                "59762-3721-4",
+                "59762-3722-1",
+                "59762-3722-3",
+                "70954-508-10",
+                "70954-508-20",
+                "70954-508-30",
+                "70954-509-10",
+                "70954-509-20",
+                "70954-509-30",
+                "70954-510-10",
+                "70954-510-20",
+                "70954-510-30",
+                "70954-511-10",
+                "70954-511-20",
+                "49884-110-74",
+                "49884-111-74",
+                "49884-213-74",
+                "49884-214-74",
+                "0228-4019-11",
+                "0228-4022-11",
+                "0228-4024-11",
+                "0228-4025-11",
+                "65162-809-03",
+                "65162-809-06",
+                "65162-809-50",
+                "65162-810-03",
+                "65162-810-06",
+                "65162-810-50",
+                "65162-812-03",
+                "65162-812-06",
+                "65162-812-50",
+                "65162-813-03",
+                "65162-813-06",
+                "65162-813-50",
+                "69339-199-01",
+                "69339-199-05",
+                "69339-199-10",
+                "69339-200-01",
+                "69339-200-05",
+                "69339-200-10",
+                "69339-201-01",
+                "69339-201-05",
+                "69339-201-10",
+                "69339-202-01",
+                "69339-202-05",
+                "69339-202-10",
+                "0009-0029-01",
+                "0009-0029-46",
+                "0009-0029-02",
+                "0009-0029-14",
+                "0009-0055-01",
+                "0009-0055-46",
+                "0009-0055-03",
+                "0009-0055-15",
+                "0009-0090-01",
+                "0009-0090-04",
+                "0009-0090-13",
+                "0009-0094-01",
+                "0009-0094-03",
+                "59762-0057-1",
+                "59762-0059-1",
+                "59762-0066-1",
+                "59762-0068-1",
+                "0054-3068-44",
+                "0781-1061-01",
+                "0781-1061-05",
+                "0781-1061-10",
+                "0781-1077-01",
+                "0781-1077-05",
+                "0781-1077-10",
+                "0781-1079-01",
+                "0781-1079-05",
+                "0781-1079-10",
+                "0781-1089-01",
+                "0781-1089-05"
+              ],
+              "nui": [
+                "N0000175694",
+                "M0002356"
+              ],
+              "pharm_class_epc": [
+                "Benzodiazepine [EPC]"
+              ],
+              "pharm_class_cs": [
+                "Benzodiazepines [CS]"
+              ],
+              "unii": [
+                "YU55MQ3IZY"
+              ]
+            }
+          }
+        ],
+        "summary": {
+          "narrativeincludeclinical": "CASE EVENT DATE: 20231201"
+        }
+      }
+    },
+    {
+      "safetyreportversion": "1",
+      "safetyreportid": "23491619",
+      "primarysourcecountry": "US",
+      "occurcountry": "US",
+      "transmissiondateformat": "102",
+      "transmissiondate": "20240410",
+      "reporttype": "1",
+      "serious": "1",
+      "seriousnessdeath": "1",
+      "seriousnesslifethreatening": "2",
+      "seriousnesshospitalization": "2",
+      "seriousnessdisabling": "2",
+      "seriousnesscongenitalanomali": "2",
+      "seriousnessother": "2",
+      "receivedateformat": "102",
+      "receivedate": "20240207",
+      "receiptdateformat": "102",
+      "receiptdate": "20240207",
+      "fulfillexpeditecriteria": "1",
+      "companynumb": "US-ENDO PHARMACEUTICALS INC-2024-000397",
+      "primarysource": {
+        "reportercountry": "US",
+        "qualification": "1",
+        "literaturereference": "Gummin DD, Mowry JB, Beuhler MC, Spyker DA, Rivers LJ, Feldman R, et al.. 2022 Annual Report of the National Poison Data System (NPDS) from America^s Poison Centers: 40th Annual Report. Clinical Toxicology. 2023;61 (10):717-939"
+      },
+      "sender": {
+        "sendertype": "2",
+        "senderorganization": "FDA-Public Use"
+      },
+      "receiver": {
+        "receivertype": "6",
+        "receiverorganization": "FDA"
+      },
+      "patient": {
+        "patientonsetage": "27",
+        "patientonsetageunit": "801",
+        "patientsex": "1",
+        "reaction": [
+          {
+            "reactionmeddraversionpt": "26.1",
+            "reactionmeddrapt": "Drug abuse",
+            "reactionoutcome": "5"
+          }
+        ],
+        "drug": [
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "LORAZEPAM",
+            "drugauthorizationnumb": "074793",
+            "drugdosagetext": "UNK UNKNOWN, UNKNOWN",
+            "drugdosageform": "Unknown",
+            "drugadministrationroute": "065",
+            "drugindication": "Product used for unknown indication",
+            "actiondrug": "6",
+            "drugadditional": "4",
+            "activesubstance": {
+              "activesubstancename": "LORAZEPAM"
+            },
+            "openfda": {
+              "application_number": [
+                "ANDA076150",
+                "NDA018140",
+                "ANDA203572",
+                "ANDA217598",
+                "ANDA218597",
+                "ANDA072755",
+                "ANDA090260",
+                "ANDA091383",
+                "NDA017794",
+                "ANDA079244",
+                "ANDA071591",
+                "ANDA077396",
+                "ANDA078203",
+                "ANDA074243",
+                "ANDA076045"
+              ],
+              "brand_name": [
+                "LORAZEPAM",
+                "ATIVAN"
+              ],
+              "generic_name": [
+                "LORAZEPAM"
+              ],
+              "manufacturer_name": [
+                "International Medication Systems, Limited",
+                "Hikma Pharmaceuticals USA Inc.",
+                "Aurolife Pharma LLC",
+                "Fresenius Kabi USA, LLC",
+                "Rising Pharma Holdings, Inc.",
+                "Pharmaceutical Associates, Inc.",
+                "Amneal Pharmaceuticals LLC",
+                "Bausch Health US LLC",
+                "Chartwell RX, LLC",
+                "ANI Pharmaceuticals, Inc.",
+                "Civica, Inc.",
+                "Leading Pharma, LLC",
+                "Hospira, Inc.",
+                "SUN PHARMACEUTICAL INDUSTRIES INC"
+              ],
+              "product_ndc": [
+                "76329-8261",
+                "0641-6207",
+                "13107-083",
+                "13107-084",
+                "13107-085",
+                "65219-368",
+                "64980-627",
+                "64980-628",
+                "64980-629",
+                "0054-3532",
+                "0121-0770",
+                "0641-6048",
+                "0641-6050",
+                "0641-6049",
+                "0641-6051",
+                "65162-687",
+                "0187-0063",
+                "0187-0064",
+                "0187-0065",
+                "62135-549",
+                "62135-861",
+                "62135-862",
+                "62135-863",
+                "62559-195",
+                "62559-196",
+                "62559-197",
+                "0641-6044",
+                "0641-6046",
+                "0641-6045",
+                "0641-6047",
+                "72572-380",
+                "69315-904",
+                "69315-905",
+                "69315-906",
+                "0409-1985",
+                "0409-1539",
+                "63304-772",
+                "63304-773",
+                "63304-774"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "INTRAMUSCULAR",
+                "INTRAVENOUS",
+                "ORAL"
+              ],
+              "substance_name": [
+                "LORAZEPAM"
+              ],
+              "rxcui": [
+                "238100",
+                "197900",
+                "197901",
+                "197902",
+                "1665188",
+                "311376",
+                "238101",
+                "1665326",
+                "104719",
+                "206821",
+                "206828",
+                "763028",
+                "763029"
+              ],
+              "spl_id": [
+                "b85a6695-55b9-4780-a803-33f8f2464138",
+                "4f2988b1-2854-4051-962f-07cc925608ab",
+                "67012944-0947-4e64-adab-869993f2f709",
+                "5cd2d0d8-9639-4e96-aafd-4991ad35fabc",
+                "b47aeb6e-aa7a-469b-a709-15df0e99ea79",
+                "a0e90170-76ad-4493-991c-551903b42b09",
+                "e5f67a93-3cca-391b-e053-2a95a90af637",
+                "462a13da-259a-40e7-bd5b-f7f42ae025b7",
+                "329ddfc8-cf47-4584-a101-4727751e1005",
+                "99b5d0cb-3d61-497c-9b51-7d0939f923a0",
+                "93bdf2de-1222-44a4-b4d5-2280f9ce58d8",
+                "044c464b-af13-d50f-e063-6394a90ade25",
+                "26588a04-2ea3-599b-e063-6394a90aa2a0",
+                "f94c8e8d-899c-4eb4-8272-9054155896ec",
+                "7c73dbc6-2623-4443-9b05-97dec7a0be2e",
+                "4b66b887-9825-4a33-9eb8-d483666e8b88",
+                "40249bb6-0d25-4b2f-aa4b-85c15af6bf8b",
+                "0280cc35-0696-4091-a000-2314f292feb2",
+                "b8fbb599-96d9-4866-908d-d8be424e5ee3"
+              ],
+              "spl_set_id": [
+                "7dda070d-7809-46c4-8592-eb4e4c509707",
+                "b79b38ee-c29d-4099-964f-000031f47f5a",
+                "5b851f67-309d-4ef3-8b4b-ade8908256ea",
+                "b2487467-a63f-48b5-b0de-3a6ce6672d50",
+                "386255e2-65aa-48ce-9eb1-246f1493cc14",
+                "5ff82103-cc57-4af9-9362-82a7c686271d",
+                "711b60a3-028d-41d4-aa17-8f976e6df23e",
+                "462a13da-259a-40e7-bd5b-f7f42ae025b7",
+                "4084fa74-9fd2-45ef-9d56-27bfa31d4e46",
+                "bf265c2e-ab2f-42e5-96cf-3998eb5a644d",
+                "89057c93-8155-4040-acec-64e877bd2b4c",
+                "e075c78d-f0c6-4380-b769-bb8833d23ba5",
+                "6b0619c5-b9e9-47e7-97b5-7e581e67cf5f",
+                "787240e9-67b5-4af3-b16d-7cf314e3f2e3",
+                "e9b54e42-04cf-4c62-90e1-36f7b31a4e81",
+                "5140798d-8571-41fb-84a4-e182aac3f64c",
+                "5ca13415-4b77-4131-a9d2-6db26bc49167",
+                "20140b19-846b-425f-b191-670e17809945",
+                "0c1caa9c-9ef1-459c-86c3-adb939130a9f"
+              ],
+              "package_ndc": [
+                "76329-8261-1",
+                "0641-6207-01",
+                "0641-6207-25",
+                "13107-083-10",
+                "13107-083-01",
+                "13107-083-05",
+                "13107-083-99",
+                "13107-084-10",
+                "13107-084-01",
+                "13107-084-05",
+                "13107-084-99",
+                "13107-085-10",
+                "13107-085-01",
+                "13107-085-05",
+                "13107-085-99",
+                "65219-368-01",
+                "65219-368-02",
+                "64980-627-01",
+                "64980-627-10",
+                "64980-627-50",
+                "64980-628-01",
+                "64980-628-10",
+                "64980-628-50",
+                "64980-629-01",
+                "64980-629-10",
+                "64980-629-50",
+                "0054-3532-44",
+                "0121-0770-01",
+                "65219-368-14",
+                "65219-368-24",
+                "0641-6048-01",
+                "0641-6048-25",
+                "0641-6050-01",
+                "0641-6050-10",
+                "0641-6049-01",
+                "0641-6049-25",
+                "0641-6051-01",
+                "0641-6051-10",
+                "65162-687-84",
+                "0187-0063-01",
+                "0187-0063-50",
+                "0187-0063-10",
+                "0187-0064-01",
+                "0187-0064-50",
+                "0187-0064-10",
+                "0187-0065-01",
+                "0187-0065-50",
+                "0187-0065-10",
+                "62135-549-43",
+                "62135-861-01",
+                "62135-862-01",
+                "62135-863-01",
+                "62559-195-01",
+                "62559-195-05",
+                "62559-195-10",
+                "62559-196-01",
+                "62559-196-05",
+                "62559-196-10",
+                "62559-197-01",
+                "62559-197-05",
+                "62559-197-10",
+                "0641-6044-01",
+                "0641-6044-25",
+                "0641-6046-01",
+                "0641-6046-10",
+                "0641-6045-01",
+                "0641-6045-25",
+                "0641-6047-01",
+                "0641-6047-10",
+                "72572-380-01",
+                "72572-380-25",
+                "69315-904-01",
+                "69315-904-05",
+                "69315-904-10",
+                "69315-905-01",
+                "69315-905-05",
+                "69315-905-10",
+                "69315-906-01",
+                "69315-906-05",
+                "69315-906-10",
+                "0409-1539-03",
+                "0409-1539-31",
+                "0409-1985-03",
+                "0409-1985-30",
+                "63304-772-90",
+                "63304-772-01",
+                "63304-772-05",
+                "63304-772-10",
+                "63304-773-90",
+                "63304-773-01",
+                "63304-773-05",
+                "63304-773-10",
+                "63304-774-90",
+                "63304-774-01",
+                "63304-774-05",
+                "63304-774-10"
+              ],
+              "nui": [
+                "N0000175694",
+                "M0002356"
+              ],
+              "pharm_class_epc": [
+                "Benzodiazepine [EPC]"
+              ],
+              "pharm_class_cs": [
+                "Benzodiazepines [CS]"
+              ],
+              "unii": [
+                "O26FZP769L"
+              ]
+            }
+          },
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "FENTANYL",
+            "drugdosagetext": "UNK UNKNOWN, UNKNOWN",
+            "drugdosageform": "Unknown",
+            "drugadministrationroute": "065",
+            "drugindication": "Product used for unknown indication",
+            "actiondrug": "6",
+            "drugadditional": "4",
+            "activesubstance": {
+              "activesubstancename": "FENTANYL\\FENTANYL CITRATE"
+            },
+            "openfda": {
+              "application_number": [
+                "ANDA077449",
+                "ANDA202097",
+                "ANDA076258"
+              ],
+              "brand_name": [
+                "FENTANYL",
+                "FENTANYL SYSTEM"
+              ],
+              "generic_name": [
+                "FENTANYL"
+              ],
+              "manufacturer_name": [
+                "Aveva Drug Delivery Systems Inc.",
+                "INGENUS PHARMACEUTICALS, LLC",
+                "ALVOGEN",
+                "Mylan Pharmaceuticals Inc."
+              ],
+              "product_ndc": [
+                "3215-7701",
+                "3215-7702",
+                "3215-7703",
+                "3215-7704",
+                "3215-7705",
+                "3215-7706",
+                "3215-7707",
+                "3215-7708",
+                "50742-549",
+                "50742-550",
+                "50742-551",
+                "50742-552",
+                "50742-553",
+                "50742-554",
+                "50742-555",
+                "50742-556",
+                "47781-423",
+                "47781-424",
+                "47781-426",
+                "47781-427",
+                "47781-428",
+                "0378-9119",
+                "0378-9121",
+                "0378-9125",
+                "0378-9122",
+                "0378-9126",
+                "0378-9123",
+                "0378-9127",
+                "0378-9124"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "TRANSDERMAL"
+              ],
+              "substance_name": [
+                "FENTANYL"
+              ],
+              "rxcui": [
+                "197696",
+                "245134",
+                "245135",
+                "245136",
+                "577057",
+                "1603495",
+                "1603498",
+                "1603501"
+              ],
+              "spl_id": [
+                "4edfc77d-dee4-611b-e063-6294a90a47f8",
+                "4edfd739-fc61-0f08-e063-6394a90ae646",
+                "4b8493ea-0ce4-6949-e063-6294a90a8861",
+                "a6e21c86-57e5-4be5-b1bb-c894893991b2"
+              ],
+              "spl_set_id": [
+                "73897c38-e4ec-40bc-9f41-3359ee23a5a8",
+                "bf02ffd0-cc5d-446b-b648-378f6885052f",
+                "242759ef-cb6d-4e3e-9f8d-5e31efa1f289",
+                "2a2238e9-4b5d-c56d-8663-dd354ff9ae0c"
+              ],
+              "package_ndc": [
+                "3215-7701-01",
+                "3215-7701-05",
+                "3215-7702-01",
+                "3215-7702-05",
+                "3215-7703-01",
+                "3215-7703-05",
+                "3215-7704-01",
+                "3215-7704-05",
+                "3215-7705-01",
+                "3215-7705-05",
+                "3215-7706-01",
+                "3215-7706-05",
+                "3215-7707-01",
+                "3215-7707-05",
+                "3215-7708-01",
+                "3215-7708-05",
+                "50742-549-01",
+                "50742-549-05",
+                "50742-550-01",
+                "50742-550-05",
+                "50742-551-01",
+                "50742-551-05",
+                "50742-552-01",
+                "50742-552-05",
+                "50742-553-01",
+                "50742-553-05",
+                "50742-554-01",
+                "50742-554-05",
+                "50742-555-01",
+                "50742-555-05",
+                "50742-556-01",
+                "50742-556-05",
+                "47781-423-11",
+                "47781-423-47",
+                "47781-424-11",
+                "47781-424-47",
+                "47781-426-11",
+                "47781-426-47",
+                "47781-427-11",
+                "47781-427-47",
+                "47781-428-11",
+                "47781-428-47",
+                "0378-9119-16",
+                "0378-9119-98",
+                "0378-9121-16",
+                "0378-9121-98",
+                "0378-9125-16",
+                "0378-9125-98",
+                "0378-9122-16",
+                "0378-9122-98",
+                "0378-9126-16",
+                "0378-9126-98",
+                "0378-9123-16",
+                "0378-9123-98",
+                "0378-9127-16",
+                "0378-9127-98",
+                "0378-9124-16",
+                "0378-9124-98"
+              ],
+              "nui": [
+                "N0000175684",
+                "N0000175690"
+              ],
+              "pharm_class_moa": [
+                "Full Opioid Agonists [MoA]"
+              ],
+              "pharm_class_epc": [
+                "Opioid Agonist [EPC]"
+              ],
+              "unii": [
+                "UF599785JZ"
+              ]
+            }
+          },
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "DIPHENHYDRAMINE",
+            "drugdosagetext": "UNK UNKNOWN, UNKNOWN",
+            "drugdosageform": "Unknown",
+            "drugadministrationroute": "065",
+            "drugindication": "Product used for unknown indication",
+            "actiondrug": "6",
+            "drugadditional": "4",
+            "activesubstance": {
+              "activesubstancename": "DIPHENHYDRAMINE"
+            },
+            "openfda": {
+              "application_number": [
+                "part341",
+                "ANDA040466",
+                "M012",
+                "ANDA205723",
+                "ANDA205336",
+                "M"
+              ],
+              "brand_name": [
+                "NIGHTIME SLEEP AID",
+                "DIPHENHYDRAMINE",
+                "HISTAPRIN"
+              ],
+              "generic_name": [
+                "DIPHENHYDRAMINE",
+                "DIPHENHYDRAMINE HYDROCHLORIDE"
+              ],
+              "manufacturer_name": [
+                "Velocity Pharma",
+                "Fresenius Kabi USA, LLC",
+                "AAA Pharmaceutical, Inc.",
+                "Micro Labs Limited",
+                "Avenacy, LLC",
+                "NorMed"
+              ],
+              "product_ndc": [
+                "76168-065",
+                "65219-820",
+                "57344-090",
+                "42571-169",
+                "42571-337",
+                "83634-781",
+                "50332-0150",
+                "63323-664"
+              ],
+              "product_type": [
+                "HUMAN OTC DRUG",
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "ORAL",
+                "INTRAMUSCULAR",
+                "INTRAVENOUS"
+              ],
+              "substance_name": [
+                "DIPHENHYDRAMINE HYDROCHLORIDE"
+              ],
+              "rxcui": [
+                "1020477",
+                "1723740",
+                "1049630"
+              ],
+              "spl_id": [
+                "6cbc010f-0449-cb45-e053-2a91aa0a1ec6",
+                "f4f0c26b-dad0-47a1-a9e7-6558c11254c0",
+                "284d200c-7ba4-d545-e063-6394a90a4d51",
+                "4c46492b-00c4-8ee4-e063-6294a90a6914",
+                "908025cf-e126-4241-b794-47d2fd90078e",
+                "675ce74c-0894-4272-85ba-086f33459a9a",
+                "38e8f892-3aa1-473f-9906-8b7ee5d23e89",
+                "6d3fc323-76a2-4dd8-84ef-2944e25da3b3"
+              ],
+              "spl_set_id": [
+                "9c44e54f-d8bc-4451-8382-40d2e8e03b42",
+                "f4f0c26b-dad0-47a1-a9e7-6558c11254c0",
+                "76724432-ff3c-404f-ba1f-5af68e3ab8c4",
+                "a1110433-498a-48cb-ac79-5732fd4f8fba",
+                "00f862aa-6917-45c7-b6aa-1bebb0a45e14",
+                "38786a65-a12b-4479-b63c-b7c15410da04",
+                "921b9f64-1096-46db-866a-67f0f9ff6790",
+                "fc574e74-1fdc-4a61-a1ed-492ae43faed2"
+              ],
+              "package_ndc": [
+                "76168-065-37",
+                "65219-820-00",
+                "65219-820-01",
+                "57344-090-02",
+                "57344-090-03",
+                "42571-169-54",
+                "42571-169-55",
+                "42571-337-95",
+                "42571-337-87",
+                "42571-337-78",
+                "42571-337-56",
+                "83634-781-41",
+                "83634-781-01",
+                "50332-0150-4",
+                "63323-664-41",
+                "63323-664-16",
+                "63323-664-00",
+                "63323-664-01"
+              ],
+              "unii": [
+                "TC2D6JAD40"
+              ]
+            }
+          }
+        ],
+        "summary": {
+          "narrativeincludeclinical": "CASE EVENT DATE: 20220101"
+        }
+      }
+    },
+    {
+      "safetyreportversion": "1",
+      "safetyreportid": "23415118",
+      "primarysourcecountry": "US",
+      "occurcountry": "US",
+      "transmissiondateformat": "102",
+      "transmissiondate": "20240409",
+      "reporttype": "1",
+      "serious": "2",
+      "seriousnessdeath": "2",
+      "seriousnesslifethreatening": "2",
+      "seriousnesshospitalization": "2",
+      "seriousnessdisabling": "2",
+      "seriousnesscongenitalanomali": "2",
+      "seriousnessother": "2",
+      "receivedateformat": "102",
+      "receivedate": "20240118",
+      "receiptdateformat": "102",
+      "receiptdate": "20240118",
+      "fulfillexpeditecriteria": "2",
+      "companynumb": "US-ELI_LILLY_AND_COMPANY-US202401009481",
+      "primarysource": {
+        "reportercountry": "US",
+        "qualification": "5"
+      },
+      "sender": {
+        "sendertype": "2",
+        "senderorganization": "FDA-Public Use"
+      },
+      "receiver": {
+        "receivertype": "6",
+        "receiverorganization": "FDA"
+      },
+      "patient": {
+        "patientonsetage": "42",
+        "patientonsetageunit": "801",
+        "patientagegroup": "5",
+        "patientsex": "2",
+        "reaction": [
+          {
+            "reactionmeddraversionpt": "26.1",
+            "reactionmeddrapt": "Injection site swelling",
+            "reactionoutcome": "1"
+          },
+          {
+            "reactionmeddraversionpt": "26.1",
+            "reactionmeddrapt": "Injection site pain",
+            "reactionoutcome": "6"
+          }
+        ],
+        "drug": [
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "MOUNJARO",
+            "drugauthorizationnumb": "215866",
+            "drugdosagetext": "UNK UNK, UNKNOWN",
+            "drugdosageform": "Solution for injection in pre-filled pen",
+            "drugadministrationroute": "058",
+            "drugindication": "Product used for unknown indication",
+            "drugstartdateformat": "610",
+            "drugstartdate": "200305",
+            "actiondrug": "5",
+            "drugadditional": "3",
+            "activesubstance": {
+              "activesubstancename": "TIRZEPATIDE"
+            },
+            "openfda": {
+              "application_number": [
+                "NDA215866"
+              ],
+              "brand_name": [
+                "MOUNJARO",
+                "MOUNJARO KWIKPEN"
+              ],
+              "generic_name": [
+                "TIRZEPATIDE"
+              ],
+              "manufacturer_name": [
+                "Eli Lilly and Company"
+              ],
+              "product_ndc": [
+                "0002-3002",
+                "0002-1506",
+                "0002-1495",
+                "0002-1484",
+                "0002-1471",
+                "0002-1460",
+                "0002-1457",
+                "0002-1152",
+                "0002-1243",
+                "0002-2214",
+                "0002-2340",
+                "0002-2423",
+                "0002-4052",
+                "0002-4103",
+                "0002-4210",
+                "0002-4304",
+                "0002-4523",
+                "0002-4612",
+                "0002-3466",
+                "0002-3455",
+                "0002-3444",
+                "0002-3433",
+                "0002-3422",
+                "0002-3411"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "SUBCUTANEOUS"
+              ],
+              "substance_name": [
+                "TIRZEPATIDE"
+              ],
+              "rxcui": [
+                "2601743",
+                "2601746",
+                "2601755",
+                "2601758",
+                "2601761",
+                "2601764",
+                "2601767",
+                "2601770",
+                "2601773",
+                "2601776",
+                "2601784",
+                "2601785",
+                "2644396",
+                "2644399",
+                "2644401",
+                "2644403",
+                "2644405",
+                "2644407",
+                "2644409",
+                "2644411",
+                "2644413",
+                "2644415",
+                "2644417",
+                "2644419",
+                "2732437",
+                "2732442",
+                "2732446",
+                "2732449",
+                "2732452",
+                "2732456",
+                "2733666",
+                "2733668",
+                "2733670",
+                "2733671",
+                "2733673",
+                "2733675",
+                "2734623",
+                "2734628",
+                "2734632",
+                "2734636",
+                "2734640",
+                "2734644",
+                "2735286",
+                "2735288",
+                "2735290",
+                "2735292",
+                "2735294",
+                "2735297"
+              ],
+              "spl_id": [
+                "8f6367b6-bf0d-46e1-ba7d-0417523474e5"
+              ],
+              "spl_set_id": [
+                "d2d7da5d-ad07-4228-955f-cf7e355c8cc0"
+              ],
+              "package_ndc": [
+                "0002-1506-01",
+                "0002-1506-80",
+                "0002-1506-61",
+                "0002-1495-01",
+                "0002-1495-80",
+                "0002-1484-01",
+                "0002-1484-80",
+                "0002-1471-01",
+                "0002-1471-80",
+                "0002-1460-01",
+                "0002-1460-80",
+                "0002-1457-01",
+                "0002-1457-80",
+                "0002-1152-01",
+                "0002-1243-01",
+                "0002-2214-01",
+                "0002-2340-01",
+                "0002-2423-01",
+                "0002-3002-01",
+                "0002-4052-01",
+                "0002-4052-11",
+                "0002-4103-01",
+                "0002-4103-11",
+                "0002-4210-01",
+                "0002-4210-11",
+                "0002-4304-01",
+                "0002-4304-11",
+                "0002-4523-01",
+                "0002-4523-11",
+                "0002-4612-01",
+                "0002-4612-11",
+                "0002-3466-01",
+                "0002-3466-11",
+                "0002-3455-01",
+                "0002-3455-11",
+                "0002-3444-01",
+                "0002-3444-11",
+                "0002-3433-01",
+                "0002-3433-11",
+                "0002-3422-01",
+                "0002-3422-11",
+                "0002-3411-01",
+                "0002-3411-11"
+              ],
+              "nui": [
+                "N0000194015",
+                "N0000000152",
+                "N0000178480",
+                "N0000020058"
+              ],
+              "pharm_class_epc": [
+                "Glucose-dependent Insulinotropic Polypeptide Receptor Agonist [EPC]",
+                "GLP-1 Receptor Agonist [EPC]"
+              ],
+              "pharm_class_moa": [
+                "G-Protein-linked Receptor Interactions [MoA]",
+                "Glucagon-like Peptide-1 (GLP-1) Agonists [MoA]"
+              ],
+              "unii": [
+                "OYN3CCI6QE"
+              ]
+            }
+          },
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "MOUNJARO",
+            "drugbatchnumb": "D681035C",
+            "drugauthorizationnumb": "215866",
+            "drugstructuredosagenumb": "7.5",
+            "drugstructuredosageunit": "003",
+            "drugdosagetext": "7.5 MG, UNKNOWN",
+            "drugdosageform": "Solution for injection in pre-filled pen",
+            "drugadministrationroute": "058",
+            "actiondrug": "5",
+            "drugadditional": "3",
+            "activesubstance": {
+              "activesubstancename": "TIRZEPATIDE"
+            },
+            "openfda": {
+              "application_number": [
+                "NDA215866"
+              ],
+              "brand_name": [
+                "MOUNJARO",
+                "MOUNJARO KWIKPEN"
+              ],
+              "generic_name": [
+                "TIRZEPATIDE"
+              ],
+              "manufacturer_name": [
+                "Eli Lilly and Company"
+              ],
+              "product_ndc": [
+                "0002-3002",
+                "0002-1506",
+                "0002-1495",
+                "0002-1484",
+                "0002-1471",
+                "0002-1460",
+                "0002-1457",
+                "0002-1152",
+                "0002-1243",
+                "0002-2214",
+                "0002-2340",
+                "0002-2423",
+                "0002-4052",
+                "0002-4103",
+                "0002-4210",
+                "0002-4304",
+                "0002-4523",
+                "0002-4612",
+                "0002-3466",
+                "0002-3455",
+                "0002-3444",
+                "0002-3433",
+                "0002-3422",
+                "0002-3411"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "SUBCUTANEOUS"
+              ],
+              "substance_name": [
+                "TIRZEPATIDE"
+              ],
+              "rxcui": [
+                "2601743",
+                "2601746",
+                "2601755",
+                "2601758",
+                "2601761",
+                "2601764",
+                "2601767",
+                "2601770",
+                "2601773",
+                "2601776",
+                "2601784",
+                "2601785",
+                "2644396",
+                "2644399",
+                "2644401",
+                "2644403",
+                "2644405",
+                "2644407",
+                "2644409",
+                "2644411",
+                "2644413",
+                "2644415",
+                "2644417",
+                "2644419",
+                "2732437",
+                "2732442",
+                "2732446",
+                "2732449",
+                "2732452",
+                "2732456",
+                "2733666",
+                "2733668",
+                "2733670",
+                "2733671",
+                "2733673",
+                "2733675",
+                "2734623",
+                "2734628",
+                "2734632",
+                "2734636",
+                "2734640",
+                "2734644",
+                "2735286",
+                "2735288",
+                "2735290",
+                "2735292",
+                "2735294",
+                "2735297"
+              ],
+              "spl_id": [
+                "8f6367b6-bf0d-46e1-ba7d-0417523474e5"
+              ],
+              "spl_set_id": [
+                "d2d7da5d-ad07-4228-955f-cf7e355c8cc0"
+              ],
+              "package_ndc": [
+                "0002-1506-01",
+                "0002-1506-80",
+                "0002-1506-61",
+                "0002-1495-01",
+                "0002-1495-80",
+                "0002-1484-01",
+                "0002-1484-80",
+                "0002-1471-01",
+                "0002-1471-80",
+                "0002-1460-01",
+                "0002-1460-80",
+                "0002-1457-01",
+                "0002-1457-80",
+                "0002-1152-01",
+                "0002-1243-01",
+                "0002-2214-01",
+                "0002-2340-01",
+                "0002-2423-01",
+                "0002-3002-01",
+                "0002-4052-01",
+                "0002-4052-11",
+                "0002-4103-01",
+                "0002-4103-11",
+                "0002-4210-01",
+                "0002-4210-11",
+                "0002-4304-01",
+                "0002-4304-11",
+                "0002-4523-01",
+                "0002-4523-11",
+                "0002-4612-01",
+                "0002-4612-11",
+                "0002-3466-01",
+                "0002-3466-11",
+                "0002-3455-01",
+                "0002-3455-11",
+                "0002-3444-01",
+                "0002-3444-11",
+                "0002-3433-01",
+                "0002-3433-11",
+                "0002-3422-01",
+                "0002-3422-11",
+                "0002-3411-01",
+                "0002-3411-11"
+              ],
+              "nui": [
+                "N0000194015",
+                "N0000000152",
+                "N0000178480",
+                "N0000020058"
+              ],
+              "pharm_class_epc": [
+                "Glucose-dependent Insulinotropic Polypeptide Receptor Agonist [EPC]",
+                "GLP-1 Receptor Agonist [EPC]"
+              ],
+              "pharm_class_moa": [
+                "G-Protein-linked Receptor Interactions [MoA]",
+                "Glucagon-like Peptide-1 (GLP-1) Agonists [MoA]"
+              ],
+              "unii": [
+                "OYN3CCI6QE"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "safetyreportversion": "1",
+      "safetyreportid": "23661566",
+      "primarysourcecountry": "US",
+      "occurcountry": "US",
+      "transmissiondateformat": "102",
+      "transmissiondate": "20240409",
+      "reporttype": "1",
+      "serious": "2",
+      "seriousnessdeath": "2",
+      "seriousnesslifethreatening": "2",
+      "seriousnesshospitalization": "2",
+      "seriousnessdisabling": "2",
+      "seriousnesscongenitalanomali": "2",
+      "seriousnessother": "2",
+      "receivedateformat": "102",
+      "receivedate": "20240322",
+      "receiptdateformat": "102",
+      "receiptdate": "20240322",
+      "fulfillexpeditecriteria": "1",
+      "companynumb": "US-GSKCCFUS-Case-01960339_AE-108940",
+      "primarysource": {
+        "reportercountry": "US",
+        "qualification": "5"
+      },
+      "sender": {
+        "sendertype": "2",
+        "senderorganization": "FDA-Public Use"
+      },
+      "receiver": {
+        "receivertype": "6",
+        "receiverorganization": "FDA"
+      },
+      "patient": {
+        "patientonsetage": "75",
+        "patientonsetageunit": "801",
+        "patientsex": "2",
+        "reaction": [
+          {
+            "reactionmeddraversionpt": "26.1",
+            "reactionmeddrapt": "Anxiety",
+            "reactionoutcome": "6"
+          }
+        ],
+        "drug": [
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "IMITREX",
+            "drugauthorizationnumb": "020132",
+            "drugdosagetext": "UNK",
+            "drugdosageform": "Tablet",
+            "drugindication": "Migraine",
+            "actiondrug": "5",
+            "drugadditional": "3",
+            "activesubstance": {
+              "activesubstancename": "SUMATRIPTAN SUCCINATE"
+            },
+            "openfda": {
+              "application_number": [
+                "NDA020080",
+                "NDA020132"
+              ],
+              "brand_name": [
+                "IMITREX"
+              ],
+              "generic_name": [
+                "SUMATRIPTAN"
+              ],
+              "manufacturer_name": [
+                "GlaxoSmithKline LLC"
+              ],
+              "product_ndc": [
+                "0173-0478",
+                "0173-0739",
+                "0173-0479",
+                "0173-0735",
+                "0173-0736",
+                "0173-0737"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "SUBCUTANEOUS",
+                "ORAL"
+              ],
+              "substance_name": [
+                "SUMATRIPTAN SUCCINATE"
+              ],
+              "rxcui": [
+                "758523",
+                "860088",
+                "1657160",
+                "1657173",
+                "208450",
+                "209169",
+                "284460",
+                "313160",
+                "313161",
+                "315223"
+              ],
+              "spl_id": [
+                "9770a6f8-f25f-48e7-a513-4a26bb43b5c1",
+                "5a8ad935-109c-410a-8289-fbe03c3d9643"
+              ],
+              "spl_set_id": [
+                "fee7d073-0b99-48f2-7985-0d8cf970894b",
+                "584abe73-8290-4484-ff8e-5890831c095e"
+              ],
+              "package_ndc": [
+                "0173-0739-00",
+                "0173-0739-02",
+                "0173-0479-00",
+                "0173-0478-00",
+                "0173-0735-00",
+                "0173-0736-01",
+                "0173-0737-01"
+              ],
+              "unii": [
+                "J8BDZ68989"
+              ]
+            }
+          },
+          {
+            "drugcharacterization": "2",
+            "medicinalproduct": "LEXAPRO",
+            "drugdosagetext": "UNK",
+            "drugindication": "Product used for unknown indication",
+            "actiondrug": "5",
+            "drugadditional": "3",
+            "activesubstance": {
+              "activesubstancename": "ESCITALOPRAM OXALATE"
+            },
+            "openfda": {
+              "application_number": [
+                "NDA021323"
+              ],
+              "brand_name": [
+                "LEXAPRO"
+              ],
+              "generic_name": [
+                "ESCITALOPRAM"
+              ],
+              "manufacturer_name": [
+                "Allergan, Inc."
+              ],
+              "product_ndc": [
+                "0456-2005",
+                "0456-2010",
+                "0456-2020",
+                "0456-2101"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "ORAL"
+              ],
+              "substance_name": [
+                "ESCITALOPRAM OXALATE"
+              ],
+              "rxcui": [
+                "349332",
+                "351249",
+                "351250",
+                "351285",
+                "352272",
+                "352273",
+                "404408",
+                "404420"
+              ],
+              "spl_id": [
+                "9ff46a66-0f97-4a78-9d18-ec576f63bae7"
+              ],
+              "spl_set_id": [
+                "13bb8267-1cab-43e5-acae-55a4d957630a"
+              ],
+              "package_ndc": [
+                "0456-2005-01",
+                "0456-2010-01",
+                "0456-2010-11",
+                "0456-2010-63",
+                "0456-2020-01",
+                "0456-2020-11",
+                "0456-2020-63",
+                "0456-2101-08"
+              ],
+              "unii": [
+                "5U85DBW7LO"
+              ]
+            }
+          },
+          {
+            "drugcharacterization": "2",
+            "medicinalproduct": "XANAX",
+            "drugdosagetext": "UNK",
+            "drugindication": "Product used for unknown indication",
+            "actiondrug": "5",
+            "drugadditional": "3",
+            "activesubstance": {
+              "activesubstancename": "ALPRAZOLAM"
+            },
+            "openfda": {
+              "application_number": [
+                "NDA018276"
+              ],
+              "brand_name": [
+                "XANAX"
+              ],
+              "generic_name": [
+                "ALPRAZOLAM"
+              ],
+              "manufacturer_name": [
+                "PHARMACIA & UPJOHN COMPANY LLC"
+              ],
+              "product_ndc": [
+                "0009-0029",
+                "0009-0055",
+                "0009-0090",
+                "0009-0094"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "ORAL"
+              ],
+              "substance_name": [
+                "ALPRAZOLAM"
+              ],
+              "rxcui": [
+                "141927",
+                "141928",
+                "197321",
+                "197322",
+                "214003",
+                "214004",
+                "308047",
+                "308048"
+              ],
+              "spl_id": [
+                "f5323eac-81d0-4096-ac15-2f25220c5c28"
+              ],
+              "spl_set_id": [
+                "388e249d-b9b6-44c3-9f8f-880eced0239f"
+              ],
+              "package_ndc": [
+                "0009-0029-01",
+                "0009-0029-46",
+                "0009-0029-02",
+                "0009-0029-14",
+                "0009-0055-01",
+                "0009-0055-46",
+                "0009-0055-03",
+                "0009-0055-15",
+                "0009-0090-01",
+                "0009-0090-04",
+                "0009-0090-13",
+                "0009-0094-01",
+                "0009-0094-03"
+              ],
+              "nui": [
+                "N0000175694",
+                "M0002356"
+              ],
+              "pharm_class_epc": [
+                "Benzodiazepine [EPC]"
+              ],
+              "pharm_class_cs": [
+                "Benzodiazepines [CS]"
+              ],
+              "unii": [
+                "YU55MQ3IZY"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "safetyreportversion": "1",
+      "safetyreportid": "23653831",
+      "primarysourcecountry": "US",
+      "occurcountry": "US",
+      "transmissiondateformat": "102",
+      "transmissiondate": "20240409",
+      "reporttype": "1",
+      "serious": "2",
+      "seriousnessdeath": "2",
+      "seriousnesslifethreatening": "2",
+      "seriousnesshospitalization": "2",
+      "seriousnessdisabling": "2",
+      "seriousnesscongenitalanomali": "2",
+      "seriousnessother": "2",
+      "receivedateformat": "102",
+      "receivedate": "20240320",
+      "receiptdateformat": "102",
+      "receiptdate": "20240320",
+      "fulfillexpeditecriteria": "2",
+      "companynumb": "US-ELI_LILLY_AND_COMPANY-US202403010876",
+      "primarysource": {
+        "reportercountry": "US",
+        "qualification": "5"
+      },
+      "sender": {
+        "sendertype": "2",
+        "senderorganization": "FDA-Public Use"
+      },
+      "receiver": {
+        "receivertype": "6",
+        "receiverorganization": "FDA"
+      },
+      "patient": {
+        "patientsex": "1",
+        "reaction": [
+          {
+            "reactionmeddraversionpt": "26.1",
+            "reactionmeddrapt": "Drug ineffective",
+            "reactionoutcome": "6"
+          },
+          {
+            "reactionmeddraversionpt": "26.1",
+            "reactionmeddrapt": "Blood glucose abnormal",
+            "reactionoutcome": "6"
+          }
+        ],
+        "drug": [
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "TRULICITY",
+            "drugauthorizationnumb": "125469",
+            "drugstructuredosagenumb": "0.75",
+            "drugstructuredosageunit": "003",
+            "drugdosagetext": "0.75 MG, UNKNOWN",
+            "drugdosageform": "Solution for injection in pre-filled pen",
+            "drugadministrationroute": "065",
+            "drugindication": "Diabetes mellitus",
+            "drugstartdateformat": "610",
+            "drugstartdate": "202402",
+            "actiondrug": "5",
+            "drugadditional": "3",
+            "activesubstance": {
+              "activesubstancename": "DULAGLUTIDE"
+            },
+            "openfda": {
+              "application_number": [
+                "BLA125469"
+              ],
+              "brand_name": [
+                "TRULICITY"
+              ],
+              "generic_name": [
+                "DULAGLUTIDE"
+              ],
+              "manufacturer_name": [
+                "Eli Lilly and Company"
+              ],
+              "product_ndc": [
+                "0002-3182",
+                "0002-1433",
+                "0002-1434",
+                "0002-2236"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "SUBCUTANEOUS"
+              ],
+              "substance_name": [
+                "DULAGLUTIDE"
+              ],
+              "rxcui": [
+                "1551295",
+                "1551300",
+                "1551304",
+                "1551306",
+                "2395777",
+                "2395779",
+                "2395783",
+                "2395785"
+              ],
+              "spl_id": [
+                "cfddaea0-134c-48f2-95df-3cff565e366e"
+              ],
+              "spl_set_id": [
+                "463050bd-2b1c-40f5-b3c3-0a04bb433309"
+              ],
+              "package_ndc": [
+                "0002-1433-01",
+                "0002-1433-80",
+                "0002-1433-61",
+                "0002-1434-01",
+                "0002-1434-80",
+                "0002-1434-61",
+                "0002-2236-01",
+                "0002-2236-80",
+                "0002-2236-61",
+                "0002-3182-01",
+                "0002-3182-80",
+                "0002-3182-61"
+              ],
+              "nui": [
+                "N0000178480",
+                "M0160181",
+                "N0000020058"
+              ],
+              "pharm_class_epc": [
+                "GLP-1 Receptor Agonist [EPC]"
+              ],
+              "pharm_class_cs": [
+                "Glucagon-Like Peptide 1 [CS]"
+              ],
+              "pharm_class_moa": [
+                "Glucagon-like Peptide-1 (GLP-1) Agonists [MoA]"
+              ],
+              "unii": [
+                "WTT295HSY5"
+              ]
+            }
+          },
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "TRULICITY",
+            "drugauthorizationnumb": "125469",
+            "drugstructuredosagenumb": "0.75",
+            "drugstructuredosageunit": "003",
+            "drugdosagetext": "0.75 MG, UNKNOWN",
+            "drugdosageform": "Solution for injection in pre-filled pen",
+            "drugadministrationroute": "065",
+            "drugindication": "Diabetes mellitus",
+            "drugstartdateformat": "610",
+            "drugstartdate": "202402",
+            "actiondrug": "5",
+            "drugadditional": "3",
+            "activesubstance": {
+              "activesubstancename": "DULAGLUTIDE"
+            },
+            "openfda": {
+              "application_number": [
+                "BLA125469"
+              ],
+              "brand_name": [
+                "TRULICITY"
+              ],
+              "generic_name": [
+                "DULAGLUTIDE"
+              ],
+              "manufacturer_name": [
+                "Eli Lilly and Company"
+              ],
+              "product_ndc": [
+                "0002-3182",
+                "0002-1433",
+                "0002-1434",
+                "0002-2236"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "SUBCUTANEOUS"
+              ],
+              "substance_name": [
+                "DULAGLUTIDE"
+              ],
+              "rxcui": [
+                "1551295",
+                "1551300",
+                "1551304",
+                "1551306",
+                "2395777",
+                "2395779",
+                "2395783",
+                "2395785"
+              ],
+              "spl_id": [
+                "cfddaea0-134c-48f2-95df-3cff565e366e"
+              ],
+              "spl_set_id": [
+                "463050bd-2b1c-40f5-b3c3-0a04bb433309"
+              ],
+              "package_ndc": [
+                "0002-1433-01",
+                "0002-1433-80",
+                "0002-1433-61",
+                "0002-1434-01",
+                "0002-1434-80",
+                "0002-1434-61",
+                "0002-2236-01",
+                "0002-2236-80",
+                "0002-2236-61",
+                "0002-3182-01",
+                "0002-3182-80",
+                "0002-3182-61"
+              ],
+              "nui": [
+                "N0000178480",
+                "M0160181",
+                "N0000020058"
+              ],
+              "pharm_class_epc": [
+                "GLP-1 Receptor Agonist [EPC]"
+              ],
+              "pharm_class_cs": [
+                "Glucagon-Like Peptide 1 [CS]"
+              ],
+              "pharm_class_moa": [
+                "Glucagon-like Peptide-1 (GLP-1) Agonists [MoA]"
+              ],
+              "unii": [
+                "WTT295HSY5"
+              ]
+            }
+          },
+          {
+            "drugcharacterization": "2",
+            "medicinalproduct": "METFORMIN",
+            "drugindication": "Diabetes mellitus",
+            "activesubstance": {
+              "activesubstancename": "METFORMIN HYDROCHLORIDE"
+            },
+            "openfda": {
+              "application_number": [
+                "ANDA209674",
+                "ANDA209313"
+              ],
+              "brand_name": [
+                "METFORMIN"
+              ],
+              "generic_name": [
+                "METFORMIN",
+                "METFORMIN ER 500 MG",
+                "METFORMIN ER 750 MG"
+              ],
+              "manufacturer_name": [
+                "Ingenus Pharmaceuticals, LLC",
+                "Granules Pharmaceuticals Inc."
+              ],
+              "product_ndc": [
+                "50742-633",
+                "50742-634",
+                "70010-491",
+                "70010-492"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "ORAL"
+              ],
+              "substance_name": [
+                "METFORMIN HYDROCHLORIDE"
+              ],
+              "rxcui": [
+                "1807894",
+                "1807917",
+                "860975",
+                "860981"
+              ],
+              "spl_id": [
+                "3a97a225-ff03-4d81-a2fe-7f66611cc4c1",
+                "537f5fd2-89a1-d029-e063-6394a90a9d0e"
+              ],
+              "spl_set_id": [
+                "49a0b5c2-ebaf-4c4c-905f-dfd1962ac647",
+                "6d6ee6f8-9650-ff4f-e053-2991aa0acf19"
+              ],
+              "package_ndc": [
+                "50742-633-60",
+                "50742-633-90",
+                "50742-633-10",
+                "50742-634-30",
+                "50742-634-60",
+                "50742-634-10",
+                "70010-491-01",
+                "70010-491-05",
+                "70010-491-10",
+                "70010-491-18",
+                "70010-491-19",
+                "70010-491-09",
+                "70010-492-01",
+                "70010-492-05",
+                "70010-492-20",
+                "70010-492-21"
+              ],
+              "unii": [
+                "786Z46389E"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "safetyreportversion": "1",
+      "safetyreportid": "23372476",
+      "primarysourcecountry": "US",
+      "occurcountry": "US",
+      "transmissiondateformat": "102",
+      "transmissiondate": "20240409",
+      "reporttype": "1",
+      "serious": "2",
+      "seriousnessdeath": "2",
+      "seriousnesslifethreatening": "2",
+      "seriousnesshospitalization": "2",
+      "seriousnessdisabling": "2",
+      "seriousnesscongenitalanomali": "2",
+      "seriousnessother": "2",
+      "receivedateformat": "102",
+      "receivedate": "20240105",
+      "receiptdateformat": "102",
+      "receiptdate": "20240105",
+      "fulfillexpeditecriteria": "2",
+      "companynumb": "US-COOPERSURGICAL, INC.-US-2023CPS000113",
+      "primarysource": {
+        "reportercountry": "US",
+        "qualification": "3"
+      },
+      "sender": {
+        "sendertype": "2",
+        "senderorganization": "FDA-Public Use"
+      },
+      "receiver": {
+        "receivertype": "6",
+        "receiverorganization": "FDA"
+      },
+      "patient": {
+        "patientonsetage": "20",
+        "patientonsetageunit": "801",
+        "patientweight": "61.678",
+        "patientsex": "2",
+        "reaction": [
+          {
+            "reactionmeddraversionpt": "26.1",
+            "reactionmeddrapt": "Complication of device insertion",
+            "reactionoutcome": "1"
+          }
+        ],
+        "drug": [
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "PARAGARD T 380A",
+            "drugauthorizationnumb": "018680",
+            "drugdosagetext": "UNK",
+            "drugdosageform": "Intrauterine device",
+            "drugadministrationroute": "015",
+            "drugindication": "Product used for unknown indication",
+            "drugstartdateformat": "102",
+            "drugstartdate": "20221019",
+            "drugenddateformat": "102",
+            "drugenddate": "20221019",
+            "drugtreatmentduration": "1",
+            "drugtreatmentdurationunit": "804",
+            "actiondrug": "6",
+            "drugadditional": "4",
+            "activesubstance": {
+              "activesubstancename": "COPPER"
+            },
+            "openfda": {
+              "application_number": [
+                "NDA018680"
+              ],
+              "brand_name": [
+                "PARAGARD T 380A"
+              ],
+              "generic_name": [
+                "COPPER"
+              ],
+              "manufacturer_name": [
+                "CooperSurgical, Inc."
+              ],
+              "product_ndc": [
+                "59365-5129"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "INTRAUTERINE"
+              ],
+              "substance_name": [
+                "COPPER"
+              ],
+              "rxcui": [
+                "2267305",
+                "2267310"
+              ],
+              "spl_id": [
+                "dba8dc62-d603-4bae-96fd-c3e9c4f3ec85"
+              ],
+              "spl_set_id": [
+                "3c420b53-c95e-46af-aebd-73741be58391"
+              ],
+              "package_ndc": [
+                "59365-5129-1"
+              ],
+              "nui": [
+                "M0005152",
+                "N0000175831",
+                "N0000008595",
+                "N0000008924",
+                "N0000175830"
+              ],
+              "pharm_class_cs": [
+                "Copper [CS]"
+              ],
+              "pharm_class_epc": [
+                "Copper-containing Intrauterine Device [EPC]"
+              ],
+              "pharm_class_pe": [
+                "Decreased Embryonic Implantation [PE]",
+                "Decreased Sperm Motility [PE]",
+                "Inhibit Ovum Fertilization [PE]"
+              ],
+              "unii": [
+                "789U1901C5"
+              ]
+            }
+          }
+        ],
+        "summary": {
+          "narrativeincludeclinical": "CASE EVENT DATE: 20221019"
+        }
+      }
+    },
+    {
+      "safetyreportversion": "1",
+      "safetyreportid": "23388843",
+      "primarysourcecountry": "US",
+      "occurcountry": "US",
+      "transmissiondateformat": "102",
+      "transmissiondate": "20240409",
+      "reporttype": "3",
+      "serious": "1",
+      "seriousnessdeath": "1",
+      "seriousnesslifethreatening": "2",
+      "seriousnesshospitalization": "2",
+      "seriousnessdisabling": "2",
+      "seriousnesscongenitalanomali": "2",
+      "seriousnessother": "1",
+      "receivedateformat": "102",
+      "receivedate": "20240110",
+      "receiptdateformat": "102",
+      "receiptdate": "20240110",
+      "fulfillexpeditecriteria": "1",
+      "primarysource": {
+        "reportercountry": "US",
+        "qualification": "1",
+        "literaturereference": "David D. Gummin, James B. Mowry, Michael C. Beuhler, Daniel A. Spyker, Laura J. Rivers, Ryan Feldman, Kaitlyn Brown, Nathaniel P.T. Pham, Alvin C. Bronstein +amp; Carol DesLauriers (2023) 2022 Annual Report of the National Poison Data System (NPDS) from America^s Poison Centers : 40th Annual Report, Clinical Toxicology, 61:10, 717-939"
+      },
+      "sender": {
+        "sendertype": "2",
+        "senderorganization": "FDA-Public Use"
+      },
+      "receiver": {
+        "receivertype": "6",
+        "receiverorganization": "FDA"
+      },
+      "patient": {
+        "patientonsetage": "29",
+        "patientonsetageunit": "801",
+        "patientsex": "1",
+        "reaction": [
+          {
+            "reactionmeddraversionpt": "26.1",
+            "reactionmeddrapt": "Drug abuse",
+            "reactionoutcome": "5"
+          }
+        ],
+        "drug": [
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "FENTANYL",
+            "drugdosagetext": "UNK",
+            "drugadministrationroute": "065",
+            "drugindication": "Product used for unknown indication",
+            "actiondrug": "6",
+            "drugadditional": "4",
+            "activesubstance": {
+              "activesubstancename": "FENTANYL\\FENTANYL CITRATE"
+            },
+            "openfda": {
+              "application_number": [
+                "ANDA077449",
+                "ANDA202097",
+                "ANDA076258"
+              ],
+              "brand_name": [
+                "FENTANYL",
+                "FENTANYL SYSTEM"
+              ],
+              "generic_name": [
+                "FENTANYL"
+              ],
+              "manufacturer_name": [
+                "Aveva Drug Delivery Systems Inc.",
+                "INGENUS PHARMACEUTICALS, LLC",
+                "ALVOGEN",
+                "Mylan Pharmaceuticals Inc."
+              ],
+              "product_ndc": [
+                "3215-7701",
+                "3215-7702",
+                "3215-7703",
+                "3215-7704",
+                "3215-7705",
+                "3215-7706",
+                "3215-7707",
+                "3215-7708",
+                "50742-549",
+                "50742-550",
+                "50742-551",
+                "50742-552",
+                "50742-553",
+                "50742-554",
+                "50742-555",
+                "50742-556",
+                "47781-423",
+                "47781-424",
+                "47781-426",
+                "47781-427",
+                "47781-428",
+                "0378-9119",
+                "0378-9121",
+                "0378-9125",
+                "0378-9122",
+                "0378-9126",
+                "0378-9123",
+                "0378-9127",
+                "0378-9124"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "TRANSDERMAL"
+              ],
+              "substance_name": [
+                "FENTANYL"
+              ],
+              "rxcui": [
+                "197696",
+                "245134",
+                "245135",
+                "245136",
+                "577057",
+                "1603495",
+                "1603498",
+                "1603501"
+              ],
+              "spl_id": [
+                "4edfc77d-dee4-611b-e063-6294a90a47f8",
+                "4edfd739-fc61-0f08-e063-6394a90ae646",
+                "4b8493ea-0ce4-6949-e063-6294a90a8861",
+                "a6e21c86-57e5-4be5-b1bb-c894893991b2"
+              ],
+              "spl_set_id": [
+                "73897c38-e4ec-40bc-9f41-3359ee23a5a8",
+                "bf02ffd0-cc5d-446b-b648-378f6885052f",
+                "242759ef-cb6d-4e3e-9f8d-5e31efa1f289",
+                "2a2238e9-4b5d-c56d-8663-dd354ff9ae0c"
+              ],
+              "package_ndc": [
+                "3215-7701-01",
+                "3215-7701-05",
+                "3215-7702-01",
+                "3215-7702-05",
+                "3215-7703-01",
+                "3215-7703-05",
+                "3215-7704-01",
+                "3215-7704-05",
+                "3215-7705-01",
+                "3215-7705-05",
+                "3215-7706-01",
+                "3215-7706-05",
+                "3215-7707-01",
+                "3215-7707-05",
+                "3215-7708-01",
+                "3215-7708-05",
+                "50742-549-01",
+                "50742-549-05",
+                "50742-550-01",
+                "50742-550-05",
+                "50742-551-01",
+                "50742-551-05",
+                "50742-552-01",
+                "50742-552-05",
+                "50742-553-01",
+                "50742-553-05",
+                "50742-554-01",
+                "50742-554-05",
+                "50742-555-01",
+                "50742-555-05",
+                "50742-556-01",
+                "50742-556-05",
+                "47781-423-11",
+                "47781-423-47",
+                "47781-424-11",
+                "47781-424-47",
+                "47781-426-11",
+                "47781-426-47",
+                "47781-427-11",
+                "47781-427-47",
+                "47781-428-11",
+                "47781-428-47",
+                "0378-9119-16",
+                "0378-9119-98",
+                "0378-9121-16",
+                "0378-9121-98",
+                "0378-9125-16",
+                "0378-9125-98",
+                "0378-9122-16",
+                "0378-9122-98",
+                "0378-9126-16",
+                "0378-9126-98",
+                "0378-9123-16",
+                "0378-9123-98",
+                "0378-9127-16",
+                "0378-9127-98",
+                "0378-9124-16",
+                "0378-9124-98"
+              ],
+              "nui": [
+                "N0000175684",
+                "N0000175690"
+              ],
+              "pharm_class_moa": [
+                "Full Opioid Agonists [MoA]"
+              ],
+              "pharm_class_epc": [
+                "Opioid Agonist [EPC]"
+              ],
+              "unii": [
+                "UF599785JZ"
+              ]
+            }
+          },
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "ALPRAZOLAM",
+            "drugdosagetext": "UNK",
+            "drugadministrationroute": "065",
+            "drugindication": "Product used for unknown indication",
+            "actiondrug": "6",
+            "drugadditional": "4",
+            "activesubstance": {
+              "activesubstancename": "ALPRAZOLAM"
+            },
+            "openfda": {
+              "application_number": [
+                "ANDA074342",
+                "ANDA203346",
+                "ANDA090871",
+                "NDA018276",
+                "ANDA074174",
+                "ANDA078088",
+                "ANDA078561",
+                "ANDA078387",
+                "ANDA200739",
+                "NDA021434",
+                "ANDA074312",
+                "ANDA074112",
+                "ANDA074909"
+              ],
+              "brand_name": [
+                "ALPRAZOLAM",
+                "XANAX",
+                "ALPRAZOLAM XR"
+              ],
+              "generic_name": [
+                "ALPRAZOLAM"
+              ],
+              "manufacturer_name": [
+                "Actavis Pharma, Inc.",
+                "Aurobindo Pharma Limited",
+                "Mylan Pharmaceuticals Inc.",
+                "ANI Pharmaceuticals, Inc.",
+                "Par Health USA, LLC",
+                "Amneal Pharmaceuticals LLC",
+                "Natco Pharma USA LLC",
+                "PHARMACIA & UPJOHN COMPANY LLC",
+                "Hikma Pharmaceuticals USA Inc.",
+                "Sandoz Inc"
+              ],
+              "product_ndc": [
+                "0228-2027",
+                "0228-2029",
+                "0228-2031",
+                "0228-2039",
+                "65862-676",
+                "65862-677",
+                "65862-678",
+                "65862-679",
+                "65862-454",
+                "65862-455",
+                "65862-456",
+                "65862-457",
+                "59762-3719",
+                "59762-3720",
+                "59762-3721",
+                "59762-3722",
+                "70954-508",
+                "70954-509",
+                "70954-510",
+                "70954-511",
+                "49884-110",
+                "49884-111",
+                "49884-213",
+                "49884-214",
+                "0228-4019",
+                "0228-4022",
+                "0228-4024",
+                "0228-4025",
+                "65162-809",
+                "65162-810",
+                "65162-812",
+                "65162-813",
+                "69339-199",
+                "69339-200",
+                "69339-201",
+                "69339-202",
+                "0009-0029",
+                "0009-0055",
+                "0009-0090",
+                "0009-0094",
+                "59762-0057",
+                "59762-0059",
+                "59762-0066",
+                "59762-0068",
+                "0054-3068",
+                "0781-1061",
+                "0781-1077",
+                "0781-1079",
+                "0781-1089"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "route": [
+                "ORAL"
+              ],
+              "substance_name": [
+                "ALPRAZOLAM"
+              ],
+              "rxcui": [
+                "197321",
+                "197322",
+                "308047",
+                "308048",
+                "433798",
+                "433799",
+                "433800",
+                "433801",
+                "485413",
+                "485414",
+                "485415",
+                "485416",
+                "141927",
+                "141928",
+                "214003",
+                "214004",
+                "308050"
+              ],
+              "spl_id": [
+                "08d09d46-386d-4dc8-a0c1-5711261c6282",
+                "7527aeb7-8912-404d-afb7-8c692c84422b",
+                "f2273fea-bd3b-4ef5-b698-73ba677722e3",
+                "0deddc26-2764-4879-a0e4-a29fff246244",
+                "18a6f29f-7eb8-4aa2-8121-d554c59da191",
+                "38e94d5e-f7e2-4349-94f2-2fba605f5ae6",
+                "38c5b407-25a1-48f5-960e-87ef637b644c",
+                "4b2e21bc-ca1c-4ff5-a996-32f1e94d2a91",
+                "885d0fec-f1a6-42f4-8617-1d048cb15ee9",
+                "f5323eac-81d0-4096-ac15-2f25220c5c28",
+                "70f0098e-50b5-4e61-b4e0-141a55d92267",
+                "d7b8cdff-1337-4ef6-a5fb-654f1d655bfe",
+                "4c8c7366-aa3b-4124-9d64-67fb0ead6e15"
+              ],
+              "spl_set_id": [
+                "a23063c0-099a-4256-b95f-3a857bbf704b",
+                "d2fd0b3e-9b78-44d0-82a6-96d6c6238750",
+                "326fa31a-5420-429b-9f7f-170cb38f64bd",
+                "13930c94-d83a-414f-be35-b1fef35f738d",
+                "38428a1b-718c-49cc-94ae-2e3644ba6256",
+                "ff1630b4-2044-433c-96bc-0bb4ae8d42a0",
+                "5ceed721-2e65-4c81-bd84-f110b1ac9d2e",
+                "259387c1-e374-4bc2-9510-5f7f2c60d1a5",
+                "b3c55877-2538-4892-bdb1-d618c643d29c",
+                "388e249d-b9b6-44c3-9f8f-880eced0239f",
+                "1338d1c9-7c75-42ed-95f3-9eb1b6fc51d3",
+                "b945ac6f-796e-41ef-85e9-61007e4a4e9a",
+                "d9b0e228-17cf-40d7-b62e-5050311c571c"
+              ],
+              "package_ndc": [
+                "0228-2027-10",
+                "0228-2027-50",
+                "0228-2027-96",
+                "0228-2029-10",
+                "0228-2029-50",
+                "0228-2029-96",
+                "0228-2031-10",
+                "0228-2031-50",
+                "0228-2031-96",
+                "0228-2039-10",
+                "65862-676-01",
+                "65862-676-05",
+                "65862-676-99",
+                "65862-677-01",
+                "65862-677-05",
+                "65862-677-99",
+                "65862-678-01",
+                "65862-678-05",
+                "65862-678-99",
+                "65862-679-01",
+                "65862-679-05",
+                "65862-679-99",
+                "65862-454-60",
+                "65862-454-99",
+                "65862-454-71",
+                "65862-455-60",
+                "65862-455-99",
+                "65862-455-71",
+                "65862-456-60",
+                "65862-456-99",
+                "65862-456-71",
+                "65862-457-60",
+                "65862-457-99",
+                "65862-457-71",
+                "59762-3719-1",
+                "59762-3719-3",
+                "59762-3719-4",
+                "59762-3720-1",
+                "59762-3720-3",
+                "59762-3720-4",
+                "59762-3721-1",
+                "59762-3721-3",
+                "59762-3721-4",
+                "59762-3722-1",
+                "59762-3722-3",
+                "70954-508-10",
+                "70954-508-20",
+                "70954-508-30",
+                "70954-509-10",
+                "70954-509-20",
+                "70954-509-30",
+                "70954-510-10",
+                "70954-510-20",
+                "70954-510-30",
+                "70954-511-10",
+                "70954-511-20",
+                "49884-110-74",
+                "49884-111-74",
+                "49884-213-74",
+                "49884-214-74",
+                "0228-4019-11",
+                "0228-4022-11",
+                "0228-4024-11",
+                "0228-4025-11",
+                "65162-809-03",
+                "65162-809-06",
+                "65162-809-50",
+                "65162-810-03",
+                "65162-810-06",
+                "65162-810-50",
+                "65162-812-03",
+                "65162-812-06",
+                "65162-812-50",
+                "65162-813-03",
+                "65162-813-06",
+                "65162-813-50",
+                "69339-199-01",
+                "69339-199-05",
+                "69339-199-10",
+                "69339-200-01",
+                "69339-200-05",
+                "69339-200-10",
+                "69339-201-01",
+                "69339-201-05",
+                "69339-201-10",
+                "69339-202-01",
+                "69339-202-05",
+                "69339-202-10",
+                "0009-0029-01",
+                "0009-0029-46",
+                "0009-0029-02",
+                "0009-0029-14",
+                "0009-0055-01",
+                "0009-0055-46",
+                "0009-0055-03",
+                "0009-0055-15",
+                "0009-0090-01",
+                "0009-0090-04",
+                "0009-0090-13",
+                "0009-0094-01",
+                "0009-0094-03",
+                "59762-0057-1",
+                "59762-0059-1",
+                "59762-0066-1",
+                "59762-0068-1",
+                "0054-3068-44",
+                "0781-1061-01",
+                "0781-1061-05",
+                "0781-1061-10",
+                "0781-1077-01",
+                "0781-1077-05",
+                "0781-1077-10",
+                "0781-1079-01",
+                "0781-1079-05",
+                "0781-1079-10",
+                "0781-1089-01",
+                "0781-1089-05"
+              ],
+              "nui": [
+                "N0000175694",
+                "M0002356"
+              ],
+              "pharm_class_epc": [
+                "Benzodiazepine [EPC]"
+              ],
+              "pharm_class_cs": [
+                "Benzodiazepines [CS]"
+              ],
+              "unii": [
+                "YU55MQ3IZY"
+              ]
+            }
+          },
+          {
+            "drugcharacterization": "1",
+            "medicinalproduct": "HEROIN",
+            "drugdosagetext": "UNK",
+            "drugadministrationroute": "065",
+            "drugindication": "Product used for unknown indication",
+            "actiondrug": "6",
+            "drugadditional": "4",
+            "activesubstance": {
+              "activesubstancename": "DIAMORPHINE"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

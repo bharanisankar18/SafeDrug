@@ -185,7 +185,352 @@ Dark background and green accent colours.
 
 ---
 
-## 6. What we did in this work session
+## 6. Exactly what each tool does, with real examples
+
+This section follows **real records from your data** through every tool, in the order the pipeline uses them.
+
+### 6.1 openFDA JSON: what the raw data looks like
+
+One report from `drug-event-0003-of-0029.json`, shortened:
+
+```json
+"patient": {
+  "patientonsetage": "20",
+  "patientsex": "2",
+  "reaction": [
+    { "reactionmeddrapt": "Complication of device insertion" }
+  ],
+  "drug": [
+    {
+      "drugcharacterization": "1",
+      "medicinalproduct": "PARAGARD T 380A",
+      "openfda": { "generic_name": ["COPPER"] }
+    }
+  ]
+}
+```
+
+**What it means:**
+- `patientsex: "2"` → female (1 = male, 2 = female)
+- `reaction` → a list (one report can have many reactions)
+- `drug` → a list (one report can have many drugs)
+- `drugcharacterization: "1"` → this is the **suspect** drug (2 = taken at the same time, 3 = interacting)
+- `openfda.generic_name` → the FDA's standard name for the medicine
+
+Everything is **nested** (lists inside lists). You cannot put this straight into a table, so cleaning is needed.
+
+---
+
+### 6.2 Python: the glue
+
+Python is the language every script is written in. It does not process the big data itself; it **gives instructions** to Spark.
+
+**Example:** when `03_clean.py` says `df.dropDuplicates(...)`, Python only sends the instruction. The real work happens inside Spark.
+
+---
+
+### 6.3 Java: the engine room
+
+Spark is written in Scala, which runs on **Java** (the JVM). PySpark uses a bridge called **Py4J** to pass your Python commands to Java.
+
+**Example of what happens when you run `python src/03_clean.py`:**
+1. Python starts.
+2. `spark_init.py` finds Java (`JAVA_HOME`).
+3. A Java process starts in the background. This is the **Spark driver**.
+4. Every Spark command in Python is sent to that Java process.
+
+That is why the project needs Java installed, even though you only write Python.
+
+---
+
+### 6.4 Hadoop: opening and saving files
+
+Spark never touches the disk directly. It asks **Hadoop's FileSystem** to do it.
+
+**When reading (example with your files):**
+
+| File | Size |
+| --- | --- |
+| drug-event-0001-of-0029.json | 707 MB |
+| drug-event-0002-of-0029.json | 782 MB |
+| drug-event-0003-of-0029.json | 134 MB |
+
+1. Spark asks Hadoop to **list** `data/raw/`, and Hadoop returns the 3 files and their sizes.
+2. Hadoop normally cuts big files into **blocks** (32 MB on a local disk), so many workers can read one file in parallel.
+3. A multi-line JSON file **cannot be cut** in the middle, because a report would break in half. So Hadoop says "not splittable", and **each file goes to one worker**.
+
+**When writing (example `clean_reports.parquet`):**
+1. Spark's 4 workers each write a part file into a hidden `_temporary` folder.
+2. When all 4 succeed, Hadoop's **FileOutputCommitter** moves them into the final folder.
+3. It writes an empty `_SUCCESS` file, meaning "the job finished properly".
+4. Next to each part file it writes a small `.crc` file, a **checksum** used to detect file corruption.
+
+So if your computer crashes halfway, you never get a half-written table.
+
+**winutils.exe and hadoop.dll:** Hadoop expects Linux-style file permissions. On Windows these two files (in `hadoop/bin`) give it that ability. Without them, Spark fails when saving files.
+
+---
+
+### 6.5 Apache Spark: the processing engine
+
+#### a) SparkSession and `local[4]`
+```python
+SparkSession.builder.master("local[4]")
+```
+This tells Spark: "use **4 CPU cores** on this computer as **4 workers**". On a real cluster this would be, say, `yarn` with 100 machines, and the code stays the same.
+
+#### b) Tasks and partitions
+Spark splits data into **partitions** and gives each one to a worker as a **task**.
+
+**Example:** reading your 3 JSON files gives **3 tasks** (one per file). Core 4 has nothing to read. The 782 MB file takes longest, so it decides how long this stage takes.
+
+#### c) Lazy evaluation
+Spark **does not run** each line immediately. It writes a plan first.
+
+```python
+df = df.dropDuplicates(["safetyreportid"])   # just added to the plan
+df = df.filter(...)                          # just added to the plan
+df.count()                                   # NOW Spark runs everything
+```
+Commands like `count()` and `write` are called **actions**. Everything else is a **transformation**. The plan is called a **DAG** (directed acyclic graph).
+
+#### d) Cleaning one real report, step by step
+Report **10236864** (a female patient, aged 52, taking **xeljanz**):
+
+**Step 1: `explode(results)`** turns the file's big list into one row per report.
+
+**Step 2: `dropDuplicates(["safetyreportid"])`** keeps one copy if the same report appears twice.
+
+**Step 3: `explode(patient.drug)`** gives one row per drug in the report.
+
+**Step 4: `filter(drugcharacterization == "1")`** keeps only the suspect drug.
+
+**Step 5: standardise the name.** Use the generic name and make it lowercase:
+
+| Brand name in report | After cleaning |
+| --- | --- |
+| PARAGARD T 380A | copper |
+| HUMIRA | adalimumab |
+| ENBREL | etanercept |
+| XYREM | sodium oxybate |
+| NERLYNX | neratinib |
+
+Without this step, "Humira" and "adalimumab" would be counted as two different drugs.
+
+**Step 6: `explode(patient.reaction)`** gives one row per reaction. Report 10236864 had 7 reactions, so it becomes **7 rows**:
+
+| safetyreportid | sex | age | drug_name | reaction_name |
+| --- | --- | --- | --- | --- |
+| 10236864 | 2 | 52 | xeljanz | condition aggravated |
+| 10236864 | 2 | 52 | xeljanz | covid-19 |
+| 10236864 | 2 | 52 | xeljanz | drug ineffective |
+| 10236864 | 2 | 52 | xeljanz | off label use |
+| 10236864 | 2 | 52 | xeljanz | psoriatic arthropathy |
+| 10236864 | 2 | 52 | xeljanz | spinal operation |
+| 10236864 | 2 | 52 | xeljanz | staphylococcal infection |
+
+Done for all reports, 35,773 reports become **377,130 rows**.
+
+#### e) Shuffle
+`dropDuplicates` and `groupBy` need all rows with the **same key** on the **same worker**. Spark moves rows between workers to make that happen. This is a **shuffle**, and it is the slowest part of a job.
+
+**Example:** to count reports for "xeljanz", every xeljanz row from all 4 workers is sent to one worker, then counted.
+
+---
+
+### 6.6 Parquet + Snappy: saving the clean table
+
+**JSON** stores data row by row, with every column name repeated in every record.
+**Parquet** stores data **column by column**:
+
+```
+JSON (row by row):            Parquet (column by column):
+{"drug":"xeljanz","sex":"2"}  drug: xeljanz, xeljanz, xeljanz ...
+{"drug":"xeljanz","sex":"2"}  sex : 2, 2, 2 ...
+{"drug":"xeljanz","sex":"2"}
+```
+
+Repeated values in a column compress extremely well with **Snappy**.
+
+**Example from your project:** 1.58 GB of raw JSON → **7.4 MB** of Parquet (about 220 times smaller). The dashboard reading only the `drug_name` column skips all the other columns, so it is much faster too.
+
+---
+
+### 6.7 Spark SQL `groupBy` + `join`: signal scoring (`04_signals.py`)
+
+Spark counts:
+- reports per **drug** (`groupBy("drug_name")`)
+- reports per **reaction** (`groupBy("reaction_name")`)
+- reports per **pair** (`groupBy("drug_name", "reaction_name")`)
+
+Then it **joins** them into one 2×2 table per pair.
+
+**Real example: neratinib and diarrhoea**
+
+|  | diarrhoea | other reactions | total |
+| --- | --- | --- | --- |
+| neratinib | a = 22 | b = 5 | 27 |
+| all other drugs | c = 1,246 | d = 34,500 | 35,746 |
+
+**PRR** (how many times more often):
+```
+PRR = [a / (a+b)] / [c / (c+d)]
+    = (22 / 27) / (1,246 / 35,746)
+    = 0.815 / 0.0349
+    = 23.4
+```
+In words: diarrhoea is reported **23 times more often** with neratinib than with other drugs.
+
+**ROR** (odds ratio):
+```
+ROR = (a × d) / (b × c) = (22 × 34,500) / (5 × 1,246) = 121.8
+95% range = 46.1 to 322.2
+```
+The whole range is above 1, so the result is unlikely to be chance.
+
+**Chi-square** (is it chance?):
+```
+χ² = 457.5   (needs to be ≥ 4)
+```
+
+**Evans check:** PRR 23.4 ≥ 2 ✔, χ² 457.5 ≥ 4 ✔, a = 22 ≥ 3 ✔ → **signal** ✔
+
+(Medical note: diarrhoea is a well-known side effect of neratinib, so this shows the method finds real effects.)
+
+Spark does this for all **158,414 pairs at once** and finds **27,860 signals**.
+
+---
+
+### 6.8 Spark MLlib FP-Growth: drugs reported together (`05_interactions.py`)
+
+**Idea:** like a supermarket finding "people who buy bread also buy butter".
+
+1. Make a **basket** per report: the list of its suspect drugs.
+   ```
+   report A: [prednisone, rituximab, cyclophosphamide]
+   report B: [prednisone, rituximab]
+   report C: [prednisone, methotrexate]
+   ```
+2. Keep only reports with **2 or more drugs**. Your data has **7,935** such reports.
+3. FP-Growth builds a compact tree of the baskets and finds pairs that appear in at least **0.3%** of them (`minSupport = 0.003`).
+
+**Real result: prednisone + rituximab**
+- appear together in **154** reports
+- support = 154 ÷ 7,935 = **1.94%** ✔ (above 0.3%)
+- reactions per report: **16.6** with both, against **10.0** normally → rate ratio **1.66**
+- 1.66 ≥ 1.2 → flagged **high risk**
+
+---
+
+### 6.9 Window functions + Z-score: spikes (`06_trends.py`)
+
+1. `groupBy(drug, month)` counts reports per month.
+2. A **window function** calculates, for each drug's own series, its **mean** and **standard deviation**, without collapsing the rows.
+
+```python
+w = Window.partitionBy("drug_name", "reaction_name")
+mean = avg("report_count").over(w)
+std  = stddev("report_count").over(w)
+```
+
+**Real example: sodium oxybate (Xyrem), March 2024**
+- usual month: mean **1.7** reports
+- standard deviation: **2.1**
+- March 2024: **16** reports
+
+```
+Z = (16 − 1.7) / 2.1 = 6.9
+```
+6.9 ≥ 3 and 16 ≥ 3, so it is flagged as a **spike**. This is the largest spike in your data.
+
+---
+
+### 6.10 MapReduce: classic Hadoop counting (`07_hadoop_showcase.py`)
+
+**Small example with 5 rows:**
+```
+Input rows:   repatha, adalimumab, repatha, rituximab, repatha
+
+MAP     → (repatha,1) (adalimumab,1) (repatha,1) (rituximab,1) (repatha,1)
+SHUFFLE → repatha: [1,1,1]   adalimumab: [1]   rituximab: [1]
+REDUCE  → repatha: 3         adalimumab: 1     rituximab: 1
+```
+
+Code:
+```python
+rdd.map(lambda row: (row["drug_name"], 1)).reduceByKey(lambda a, b: a + b)
+```
+
+**Real result:** repatha **5,540**, adalimumab **5,061**, rituximab **5,001** drug–reaction rows. That gives 3,127 drugs counted in total.
+
+This is the original Hadoop idea (from Google, 2004). Spark runs the same pattern, but keeps the data in memory, which makes it much faster.
+
+---
+
+### 6.11 pandas + PyArrow: loading for the dashboard
+
+```python
+clean = pd.read_parquet("data/processed/clean_reports.parquet")
+```
+**PyArrow** reads the 4 Parquet part files and gives **pandas** one table in memory (377,130 rows). Spark is **not** used by the dashboard; the heavy work was already done.
+
+**Example filter in Drug Explorer:**
+```python
+clean[clean["drug_name"] == "xeljanz"]   # takes milliseconds
+```
+
+---
+
+### 6.12 Streamlit: the web app
+
+**How it works:** Streamlit runs `app.py` **from top to bottom every time you click something**.
+
+**Example: you choose "xeljanz" in Drug Explorer**
+1. Streamlit reruns `app.py`.
+2. `load_tables()` would load the Parquet files, but it has `@st.cache_data`, so Streamlit reuses the copy already in memory.
+3. The code filters the table to xeljanz.
+4. Streamlit sends the new numbers and charts to your browser.
+
+Without caching, every click would re-read all the files.
+
+---
+
+### 6.13 Plotly: the charts
+
+Python builds a chart description, and Plotly turns it into **JSON** that the browser draws. That is why you can **hover, zoom and drag**.
+
+**Example: the Safety Signals "Signal map"**
+- x-axis = log₂(PRR) → neratinib/diarrhoea: log₂(23.4) = **4.5**
+- y-axis = log₁₀(χ²) → log₁₀(457.5) = **2.66**
+- hover → shows drug, reaction, PRR, ROR
+
+Logarithms are used because PRR ranges from 2 to 35,000, which would not fit on a normal axis.
+
+---
+
+### 6.14 NetworkX: the network picture
+
+NetworkX builds a **graph**: drugs are **nodes**, pairs are **edges**. Then `spring_layout` places them like balls on springs: connected drugs pull together and unconnected ones push apart.
+
+**Example:** prednisone and rituximab are each paired with **47** other drugs, more than any other drug. So they end up **near the centre** as **big dots**.
+
+---
+
+### 6.15 Git + GitHub: saving the project online
+
+| Command | What happens |
+| --- | --- |
+| `git init` | Makes the folder a Git project (creates a hidden `.git` folder) |
+| `.gitignore` | Lists files Git must ignore, such as `data/raw/` (1.7 GB) |
+| `git add .` | Selects all changed files for the next save |
+| `git commit -m "..."` | Saves a snapshot with a message |
+| `git push` | Uploads the snapshots to GitHub |
+
+**Your repo:** https://github.com/bharanisankar18/SafeDrug
+
+---
+
+## 7. What we did in this work session
 
 1. **Found why the dashboard wasn't showing.**
    - The Safety Signals page used old column names (`pair_count`, `prr_ci_lower`) that no longer exist in `signals.parquet`. The real names are `report_count` and `ror_lower_ci`.
@@ -202,7 +547,7 @@ Dark background and green accent colours.
 
 ---
 
-## 7. How to run it
+## 8. How to run it
 
 ```powershell
 cd D:\SafeDose
@@ -224,7 +569,7 @@ The processed tables already exist, so normally you only need the last command.
 
 ---
 
-## 8. Questions faculty may ask, with simple answers
+## 9. Questions faculty may ask, with simple answers
 
 **Q: Why use Spark instead of just pandas?**
 A: The raw data is 1.7 GB of nested JSON. Spark splits the work across CPU cores and can grow to a cluster of many machines. pandas would struggle with memory on bigger downloads.
@@ -264,7 +609,7 @@ A: When Spark must move rows between workers so that rows with the same key end 
 
 ---
 
-## 9. Limitations to mention honestly
+## 10. Limitations to mention honestly
 
 - Most reports are from one quarter (January to March 2024), so long-term trends are limited.
 - Reports are voluntary: under-reporting, duplicates and media effects are possible.

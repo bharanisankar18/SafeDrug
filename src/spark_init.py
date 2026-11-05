@@ -15,7 +15,8 @@ def get_short_path(path_str: str) -> str:
 
 # Project Directories
 BASE_DIR = Path(__file__).resolve().parent.parent
-DATA_DIR = BASE_DIR / "data"
+# Set SAFEDOSE_DATA_DIR to run the pipeline on another folder (e.g. a small sample) without touching data/.
+DATA_DIR = Path(os.environ["SAFEDOSE_DATA_DIR"]) if os.environ.get("SAFEDOSE_DATA_DIR") else BASE_DIR / "data"
 RAW_DATA_DIR = DATA_DIR / "raw"
 PROCESSED_DATA_DIR = DATA_DIR / "processed"
 HADOOP_HOME_DIR = BASE_DIR / "hadoop"

@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import html
 import json
+import os
 from pathlib import Path
 
 import networkx as nx
@@ -355,8 +356,10 @@ def num_cols(**cols) -> dict:
 # Data
 # ---------------------------------------------------------------------------
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
-RAW_DIR = PROJECT_ROOT / "data" / "raw"
+# Set SAFEDOSE_DATA_DIR to view another dataset folder (e.g. a small sample) instead of data/.
+DATA_ROOT = Path(os.environ["SAFEDOSE_DATA_DIR"]) if os.environ.get("SAFEDOSE_DATA_DIR") else PROJECT_ROOT / "data"
+PROCESSED_DIR = DATA_ROOT / "processed"
+RAW_DIR = DATA_ROOT / "raw"
 ASSETS_DIR = Path(__file__).resolve().parent / "assets"
 
 TABLES = {
@@ -848,11 +851,14 @@ def page_signals() -> None:
     with st.container(border=True, key="card_sig_table"):
         h1, h2 = st.columns([4, 1], vertical_alignment="bottom")
         with h1:
-            card_header("Signal table", f"Top 200 of {len(sig):,} matching pairs, strongest evidence first")
+            shown = (f"All {len(sig):,} matching pairs" if len(sig) <= 200
+                     else f"Top 200 of {len(sig):,} matching pairs")
+            card_header("Signal table", f"{shown}, strongest evidence first")
         with h2, st.container(key="dl"):
             st.download_button("Download CSV", sig.drop(columns=["is_signal"], errors="ignore").to_csv(index=False),
                                file_name="safedose_signals.csv", mime="text/csv", width="stretch",
                                icon=":material/download:")
+        gap(0.8)  # room for the table's hover toolbar so it doesn't cover the button
         st.dataframe(sig.head(200)[["drug_name", "reaction_name", "report_count", "prr", "ror", "ror_lower_ci",
                                     "ror_upper_ci", "chi_square"]],
                      hide_index=True, width="stretch", height=420,
